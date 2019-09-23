@@ -1,0 +1,13 @@
+body {
+    padding: 10px 0;
+}
+
+.config-row > a {
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.card-header-fill-blue {
+    color: #ffffff;
+    background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+}
