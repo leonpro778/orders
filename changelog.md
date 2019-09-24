@@ -6,5 +6,5 @@ This file includes all changes in our app.
 ### Added
 - migration for table `users`
 - migration for table `users_role`
-- language selection (for now available en/pl only)
+- multi language (for now available en/pl only)
 - login page (without login action)

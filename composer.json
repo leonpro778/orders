@@ -1,11 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "leonpro778/storage",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "description": "Simple application to manage warehouse resources in our company.",
     "license": "MIT",
     "require": {
         "php": "^7.1.3",

@@ -15,7 +15,7 @@ return [
     'name' => 'LS Storage',
     'major' => '0',
     'minor' => '0',
-    'release' => '1',
+    'patch' => '1',
     'release_date' => '23.09.2019',
 
     /*
