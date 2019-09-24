@@ -15,8 +15,9 @@ return [
     'name' => 'LS Storage',
     'major' => '0',
     'minor' => '0',
-    'patch' => '1',
-    'release_date' => '23.09.2019',
+    'patch' => '2',
+    'release_date' => '24.09.2019',
+    'admin_email' => 'admin@admin.com',
 
     /*
     |--------------------------------------------------------------------------

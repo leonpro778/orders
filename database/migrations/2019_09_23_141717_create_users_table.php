@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->string('role');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

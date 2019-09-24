@@ -32,8 +32,13 @@
             <a href="changeLanguage/en"><img src="{{ asset('images/lang/lang-gb.png') }}" title="{{ __('layout_page.flag_en') }}" /> EN</a>
         </div>
     </div>
-    <div class="container">
+    @include('auth.main_menu')
+
+    <div class="container-fluid">
         @yield('content')
     </div>
+    <hr />
+
 </body>
 </html>
+

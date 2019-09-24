@@ -1,3 +1,10 @@
-@extends('layout.main_layout')
+@extends('auth.auth_layout')
 
-{{ __('auth.welcome') }}
+@section('content')
+    <div class="row">
+        <div class="col-12">
+            {{ __('auth.welcome') }}
+        </div>
+    </div>
+@endsection
+

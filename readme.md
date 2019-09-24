@@ -8,5 +8,4 @@ We use:
 - [Bootstrap 4](https://getbootstrap.com/)
 - [jQuery](https://jquery.com/)
 
-
-
+For now, there is no release version

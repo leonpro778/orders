@@ -9,6 +9,8 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('login', function () {
         return view('guests.login');
     })->name('login');
+
+    Route::post('loginUser', 'Auth\LoginController@authenticate');
 });
 
 /**
@@ -20,6 +22,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
         return view('auth.welcome');
     });
+
+    Route::get('welcome', function () {
+        return view('auth.welcome');
+    });
+
+    Route::get('logout', 'Auth\LoginController@logout');
 });
 
 /**
