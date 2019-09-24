@@ -13,11 +13,7 @@ This file includes all changes in our app.
 - migration and seed for `users_data` table
 - account `admin` - default password is 'admin', main account in application. Default password can be changed in
 `database/seeds/UsersTableSeeder.php`
-
-### Changed
-- new column `status` in `users` table
-- status can be obtained directly from `User` model
-
+- new column `status` in `users` table, status value can be obrainde firectly from `User` model
 
 ## [0.0.1] - 23.09.2019
 
