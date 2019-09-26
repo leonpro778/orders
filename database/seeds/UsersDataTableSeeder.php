@@ -18,7 +18,9 @@ class UsersDataTableSeeder extends Seeder
             'surname' => 'Application',
             'department' => 1,
             'phone' => '',
-            'cellphone' => ''
+            'cellphone' => '',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
     }
 }

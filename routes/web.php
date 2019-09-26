@@ -19,15 +19,18 @@ Route::group(['middleware' => 'guest'], function () {
  * For all types authorized users
  */
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', function () {
-        return view('auth.welcome');
-    });
-
-    Route::get('welcome', function () {
-        return view('auth.welcome');
-    });
-
     Route::get('logout', 'Auth\LoginController@logout');
+
+    Route::get('/', 'User\UserController@welcomePage');
+    Route::get('welcome', 'User\UserController@welcomePage');
+    Route::get('user/MyProfile', 'User\UserController@myProfile');
+
+    Route::get('user/MyProfile/Edit', 'User\UserDataController@editData');
+    Route::post('user/MyProfile/Update', 'User\UserDataController@updateData');
+
+    Route::get('user/changePassword', function () {
+        return view('auth.change_password');
+    });
 });
 
 /**

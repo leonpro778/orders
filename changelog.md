@@ -1,6 +1,14 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [0.0.3] - 26.09.2019
+
+### Added
+- __My Profile__ view
+- __Edit User Data__ view and method to update
+- new validation rule - `SearchInModelRule` in `App\Rules`
+- __Change Password__ view (complete form)
+
 ## [0.0.2] - 24.09.2019
 
 ### Added
@@ -14,6 +22,7 @@ This file includes all changes in our app.
 - account `admin` - default password is 'admin', main account in application. Default password can be changed in
 `database/seeds/UsersTableSeeder.php`
 - new column `status` in `users` table, status value can be obrainde firectly from `User` model
+- modal window with "About"
 
 ## [0.0.1] - 23.09.2019
 

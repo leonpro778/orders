@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DepartmentsTableSeeder extends Seeder
 {
@@ -13,7 +12,9 @@ class DepartmentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('departments')->insert([
-            'name' => 'none'
+            'name' => 'none',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
     }
 }

@@ -11,3 +11,11 @@
 .main-menu-fill-blue {
     background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
 }
+
+span.red {
+    color: red;
+}
+
+span.green {
+    color: green;
+}

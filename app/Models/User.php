@@ -37,4 +37,14 @@ class User extends Authenticatable
     const ACTIVE = 1;
     const BLOCKED = 2;
     const DELETED = 5;
+
+    public function userDataGet()
+    {
+        return $this->hasOne(UserData::class, 'user_id', 'id');
+    }
+
+    public function getUserRole()
+    {
+        return $this->hasOne(UserRole::class, 'id', 'role');
+    }
 }

@@ -15,7 +15,7 @@
                     {{ __('login_page.login_header') }}
                 </div>
                 <div class="card-body">
-                    <form action="loginUser" method="POST">
+                    <form action="{{ url('loginUser') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="login">{{ __('login_page.label_login') }}</label>

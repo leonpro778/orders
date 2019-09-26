@@ -28,8 +28,8 @@
 <body>
     <div class="container-fluid">
         <div class="col-12 text-right config-row">
-            <a href="changeLanguage/pl"><img src="{{ asset('images/lang/lang-pl.png') }}" title="{{ __('layout_page.flag_pl') }}" /> PL</a> /
-            <a href="changeLanguage/en"><img src="{{ asset('images/lang/lang-gb.png') }}" title="{{ __('layout_page.flag_en') }}" /> EN</a>
+            <a href="{{ url('changeLanguage/pl') }}"><img src="{{ asset('images/lang/lang-pl.png') }}" title="{{ __('layout_page.flag_pl') }}" /> PL</a> /
+            <a href="{{ url('changeLanguage/en') }}"><img src="{{ asset('images/lang/lang-gb.png') }}" title="{{ __('layout_page.flag_en') }}" /> EN</a>
         </div>
     </div>
     <div class="container">
