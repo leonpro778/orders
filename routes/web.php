@@ -31,6 +31,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user/changePassword', function () {
         return view('auth.change_password');
     });
+    Route::post('user/changePassword', 'User\UserController@changePassword');
+});
+
+/**
+ * Authorized
+ *
+ * For users with administrator role
+ */
+Route::group(['middleware' => ['auth', 'role:administrator']], function () {
+   Route::get('administrator/NewUser', 'User\AdministratorController@newUser');
+   Route::post('administrator/AddUser', 'User\AdministratorController@addUser');
+
+   Route::get('administrator/UsersList', 'User\AdministratorController@usersList');
 });
 
 /**

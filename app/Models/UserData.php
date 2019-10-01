@@ -4,6 +4,7 @@
 namespace App\Models;
 
 
+use App\Rules\SearchInModelRule;
 use Illuminate\Database\Eloquent\Model;
 
 class UserData extends Model
@@ -11,7 +12,7 @@ class UserData extends Model
     protected $table = 'users_data';
 
     protected $fillable = [
-        'name', 'surname', 'department', 'phone', 'cellphone'
+        'user_id', 'name', 'surname', 'department', 'phone', 'cellphone'
     ];
 
     public function user()

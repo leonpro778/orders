@@ -3,15 +3,16 @@
 
 namespace App\Rules;
 
+
 use Illuminate\Contracts\Validation\Rule;
 
-class SearchInModelRule implements Rule
+class SearchInRolesRule implements Rule
 {
-    private $modelObject;
+    private $roles;
 
-    public function __construct($modelObject)
+    public function __construct($roles)
     {
-        $this->modelObject = $modelObject;
+        $this->roles = $roles;
     }
 
     /**
@@ -23,7 +24,7 @@ class SearchInModelRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $this->modelObject->find($value);
+        return $this->roles->find($value);
     }
 
     /**

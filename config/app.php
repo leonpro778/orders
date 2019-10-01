@@ -12,11 +12,11 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-    'name' => 'LS Storage',
+    'name' => 'LS Orders',
     'major' => '0',
     'minor' => '0',
-    'patch' => '2',
-    'release_date' => '24.09.2019',
+    'patch' => '4',
+    'release_date' => '27.09.2019',
     'admin_email' => 'admin@admin.com',
 
     /*

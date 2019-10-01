@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -30,13 +31,13 @@ class User extends Authenticatable
     /**
      * These values determine user account status.
      *
-     * 5 - soft deleted (only
+     * 5 - soft deleted
      * 1 - active
      * 2 - blocked
      */
-    const ACTIVE = 1;
-    const BLOCKED = 2;
-    const DELETED = 5;
+    public const ACTIVE = 1;
+    public const BLOCKED = 2;
+    public const DELETED = 5;
 
     public function userDataGet()
     {
@@ -46,5 +47,20 @@ class User extends Authenticatable
     public function getUserRole()
     {
         return $this->hasOne(UserRole::class, 'id', 'role');
+    }
+
+    public function checkRole($role)
+    {
+        if ($this->role <= UserRole::where('name', $role)->first()->id) { return true; }
+    }
+
+    public static function getBlockedStatus()
+    {
+        return self::BLOCKED;
+    }
+
+    public static function getDeletedStatus()
+    {
+        return self::DELETED;
     }
 }

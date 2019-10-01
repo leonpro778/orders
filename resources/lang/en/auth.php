@@ -5,6 +5,16 @@
          */
         'logoutLink' => 'Log out',
         'welcome' => 'Welcome',
+        'quick_actions' => 'Quick actions',
+        'quick_actions_describe' => 'Shortcut\'s to quick actions',
+        'quick_actions_new_order' => 'New order',
+        'quick_actions_list_orders' => 'List orders',
+        'my_orders' => 'My orders',
+        'my_orders_describe' => 'Short summary of my orders',
+        'my_orders_7_days' => 'Number of orders from last 7 days',
+        'my_orders_30_days' => 'Number of orders from last 30 days',
+        'my_orders_view_orders' => 'view orders',
+        'my_orders_in_progress' => 'in progress',
 
         /**
          * Profile page
@@ -32,6 +42,8 @@
         ',
         'user_profile_password_title' => 'Change password',
         'user_profile_password_button' => 'Change password',
+        'user_profile_bad_password' => 'Your current password is incorrect.',
+        'user_profile_change_password' => 'Your password has changed.',
 
         /**
          * Edit data profile
@@ -40,4 +52,14 @@
         'user_data_update' => 'Update',
         'user_data_update_success' => 'Your data has successfully updated',
 
+
+        /**
+         * Administrator
+         */
+        'administrator_new_user_title' => 'Add new user',
+        'administrator_new_user_card_title' => 'Please fill the field below',
+        'administrator_new_user_add_button' => 'Add user',
+        'administrator_new_user_added_success' => 'New user has added successfully.',
+        'administrator_users_list_title' => 'Users list',
+        'administrator_users_list_edit_button' => 'Edit user',
     ];

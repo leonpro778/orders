@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <strong>{{ config('app.name') }}</strong><br /><br />
                 {{ __('about_window.about_version') }} {{ config('app.major').'.'.config('app.minor').'.'.config('app.patch') }}<br />
-                {{ __('about_window.about_github') }}: <a href="https://github.com/leonpro778/storage" target="_blank">https://github.com/leonpro778/storage</a><br />
+                {{ __('about_window.about_github') }}: <a href="https://github.com/leonpro778/storage" target="_blank">https://github.com/leonpro778/orders</a><br />
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('about_window.about_close') }}</button>

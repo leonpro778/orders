@@ -11,11 +11,11 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Quick actions</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Shortcut's to quick actions</h6>
+                    <h5 class="card-title">{{ __('auth.quick_actions') }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ __('auth.quick_actions_describe') }}</h6>
                     <p class="card-text">
-                        <a href="#" class="card-link"><i class="fas fa-folder-plus"></i> New order</a><br />
-                        <a href="#" class="card-link"><i class="fas fa-list"></i> List orders</a>
+                        <a href="#" class="card-link"><i class="fas fa-folder-plus"></i> {{ __('auth.quick_actions_new_order') }}</a><br />
+                        <a href="#" class="card-link"><i class="fas fa-list"></i> {{ __('auth.quick_actions_list_orders') }}</a>
                     </p>
                 </div>
             </div>
@@ -24,16 +24,16 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">My orders</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Short summary of my orders</h6>
+                    <h5 class="card-title">{{ __('auth.my_orders') }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ __('auth.my_orders_describe') }}</h6>
                     <p class="card-text">
-                        Number of orders from last 7 days: <strong>0</strong><br />
-                        (0 in progress)<br />
-                        <a href="#" class="card-link">view orders</a><br /><br />
+                        {{ __('auth.my_orders_7_days') }}: <strong>0</strong><br />
+                        (0 {{ __('auth.my_orders_in_progress') }})<br />
+                        <a href="#" class="card-link">{{ __('auth.my_orders_view_orders') }}</a><br /><br />
 
-                        Number of orders from last 30 days: <strong>0</strong><br />
-                        (0 in progress)<br />
-                        <a href="#" class="card-link">view orders</a><br /><br />
+                        {{ __('auth.my_orders_30_days') }}: <strong>0</strong><br />
+                        (0 {{ __('auth.my_orders_in_progress') }})<br />
+                        <a href="#" class="card-link">{{ __('auth.my_orders_view_orders') }}</a><br /><br />
                     </p>
                 </div>
             </div>

@@ -1,8 +1,9 @@
 <?php
     return [
-        'search_in_model' => 'Selected value must be available in correct model.',
-        'profile_name_required' => 'Field <strong>name</strong> is required.',
-        'profile_name_min' => 'Field <strong>name</strong> must have to min. 3 char.',
-        'profile_surname_required' => 'Field <strong>name</strong> is required.',
-        'profile_surname_min' => 'Field <strong>surname</strong> must have to min. 3 char.'
+        'search_in_model' => 'Selected value in <strong>:attribute</strong> must be available in correct model.',
+        'field_required' => 'Field <strong>:attribute</strong> is required',
+        'field_min' => 'Field <strong>:attribute</strong> must contain min :min characters.',
+        'field_max' => 'Field <strong>:attribute</strong> must contain max :max characters.',
+        'field_unique' => 'Field <strong>:attribute</strong> must be unique (<strong>:input</strong> already exists).',
+        'user_password_same' => 'New password and Re-type new password must be same.',
     ];

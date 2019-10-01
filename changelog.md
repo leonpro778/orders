@@ -1,6 +1,22 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [0.0.4] - 01.10.2019
+
+This app will be used to manage orders in company so there was a necessity to
+change project name.
+
+### Added
+- change project name to __orders__
+- `changePassword` method in `UserController`
+- add __users roles__
+- __new user__ functionality
+- __users list__ - only view
+
+
+### Changed
+- __My Profile__ view - added __last modified__ and __created__
+
 ## [0.0.3] - 26.09.2019
 
 ### Added

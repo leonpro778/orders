@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,15 +43,30 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('login', 'password');
+        $credentials = array_merge($request->only('login', 'password'), ['status' => User::ACTIVE ]);
         if (Auth::attempt($credentials)) {
             return redirect()->to('welcome');
         }
         else
         {
-            Input::flashOnly('login');
-            return redirect()->to('login')->with([
-                'error' => __('login_page.login_incorrect')
+            $returnStatus = User::where('login', $request->login)->first()->status;
+            switch ($returnStatus) {
+                case User::BLOCKED:
+                    $returnMessage = __('login_page.account_blocked');
+                    break;
+
+                case User::DELETED:
+                    $returnMessage = __('login_page.account_deleted');
+                    break;
+
+                default:
+                    $returnMessage = __('login_page.login_incorrect');
+                    break;
+            }
+            return redirect()->to('login')
+                ->withInput()
+                ->with([
+                'error' => $returnMessage
             ]);
         }
     }

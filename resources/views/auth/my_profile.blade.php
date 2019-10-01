@@ -60,6 +60,14 @@
                         <div class="col">{{ __('auth.user_profile_cellphone') }}</div>
                         <div class="col font-weight-bold text-right">{{ $user->userDataGet->cellphone }}</div>
                     </div>
+                    <div class="row">
+                        <div class="col">{{ __('auth.user_profile_updated') }}</div>
+                        <div class="col font-weight-bold text-right">{{ $user->userDataGet->updated_at }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{ __('auth.user_profile_created') }}</div>
+                        <div class="col font-weight-bold text-right">{{ $user->userDataGet->created_at }}</div>
+                    </div>
                     <hr />
                     <p class="card-text">
                         <a href="{{ url('user/MyProfile/Edit') }}" class="card-link"><i class="fas fa-edit"></i> {{ __('auth.user_profile_edit') }}</a>
