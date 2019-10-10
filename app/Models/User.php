@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -54,13 +53,16 @@ class User extends Authenticatable
         if ($this->role <= UserRole::where('name', $role)->first()->id) { return true; }
     }
 
-    public static function getBlockedStatus()
+    public static function getAllUsers()
     {
-        return self::BLOCKED;
+        return self::where('status', '<>', 5)
+            ->where('login', '<>', config('app.admin_login'))
+            ->orderBy('role')
+            ->get();
     }
 
-    public static function getDeletedStatus()
+    public function orders()
     {
-        return self::DELETED;
+        return $this->hasMany(Order::class, 'user_id', 'id');
     }
 }

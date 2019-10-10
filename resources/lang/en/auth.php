@@ -62,4 +62,28 @@
         'administrator_new_user_added_success' => 'New user has added successfully.',
         'administrator_users_list_title' => 'Users list',
         'administrator_users_list_edit_button' => 'Edit user',
+        'administrator_users_list_restore_password_button' => 'Restore password',
+        'administrator_users_list_delete_user_button' => 'Delete user',
+        'administrator_users_list_col_user_id' => 'ID User',
+        'administrator_users_list_col_name' => 'Name',
+        'administrator_users_list_col_surname' => 'Surname',
+        'administrator_users_list_col_options' => 'Options',
+        'administrator_edit_user_title' => 'Edit user',
+        'administrator_edit_user_card_title' => 'Please fill the field below',
+        'administrator_edit_user_update' => 'Users data has updated',
+        'administrator_edit_user_update_button' => 'Update user data',
+        'administrator_departments_title' => 'Departments',
+        'administrator_departments_new' => 'Add new department',
+        'administrator_departments_name' => 'Department name',
+        'administrator_departments_add_button' => 'Add department',
+        'administrator_departments_list' => 'List of departments',
+        'administrator_departments_update' => 'Update department',
+        'administrator_departments_updated' => 'Department name has updated',
+        'administrator_departments_delete' => 'Delete department',
+
+        /**
+         * Orders page
+         */
+        'orders_new_order' => 'New order',
+
     ];

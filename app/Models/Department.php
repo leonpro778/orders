@@ -10,6 +10,8 @@ class Department extends Model
 {
     protected $table = 'departments';
 
+    protected $fillable = ['name', 'status'];
+
     public function users()
     {
         return $this->hasMany(User::class, 'departments', 'id');
@@ -18,5 +20,10 @@ class Department extends Model
     public function getDepartmentName()
     {
         return $this->name;
+    }
+
+    public static function active()
+    {
+        return self::where('status', 1)->get();
     }
 }

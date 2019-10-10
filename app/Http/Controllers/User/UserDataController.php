@@ -16,7 +16,7 @@ class UserDataController extends Controller
     {
         $data = [
             'user' => Auth::user(),
-            'departments' => Department::all()
+            'departments' => Department::active()
         ];
 
         return view('auth.edit_data')->with($data);

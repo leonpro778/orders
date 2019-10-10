@@ -32,6 +32,13 @@ Route::group(['middleware' => 'auth'], function () {
         return view('auth.change_password');
     });
     Route::post('user/changePassword', 'User\UserController@changePassword');
+
+    /*
+     * Orders section
+     *
+     * Routes for orders, middleware requirement is `auth`
+     */
+    Route::get('order/New', 'User\UserController@newOrder');
 });
 
 /**
@@ -44,13 +51,21 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function () {
    Route::post('administrator/AddUser', 'User\AdministratorController@addUser');
 
    Route::get('administrator/UsersList', 'User\AdministratorController@usersList');
+   Route::get('administrator/EditUser/{user_id}', 'User\AdministratorController@editUser');
+   Route::post('administrator/UpdateUser/{user_id}', 'User\AdministratorController@updateUser');
+
+   Route::get('administrator/Departments', 'User\AdministratorController@departmentsList');
+   Route::post('administrator/AddDepartment', 'User\AdministratorController@addDepartment');
+   Route::post('administrator/Departments/Update/{id}', 'User\AdministratorController@updateDepartment');
+   Route::get('administrator/Departments/Delete/{id}', 'User\AdministratorController@deleteDepartment');
 });
 
 /**
  * Simply route to change language. For now selected language is stored in session.
- * TODO - add security for language selection
  */
 Route::get('changeLanguage/{language}', function ($language) {
-    session()->put('language', $language);
+    if (in_array($language, config('app.available_languages'))) {
+        session()->put('language', $language);
+    }
     return redirect()->back();
 });

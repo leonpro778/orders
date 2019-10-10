@@ -14,7 +14,7 @@
                     <h5 class="card-title">{{ __('auth.quick_actions') }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{ __('auth.quick_actions_describe') }}</h6>
                     <p class="card-text">
-                        <a href="#" class="card-link"><i class="fas fa-folder-plus"></i> {{ __('auth.quick_actions_new_order') }}</a><br />
+                        <a href="{{ url('order/New') }}" class="card-link"><i class="fas fa-folder-plus"></i> {{ __('auth.quick_actions_new_order') }}</a><br />
                         <a href="#" class="card-link"><i class="fas fa-list"></i> {{ __('auth.quick_actions_list_orders') }}</a>
                     </p>
                 </div>

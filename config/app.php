@@ -15,9 +15,12 @@ return [
     'name' => 'LS Orders',
     'major' => '0',
     'minor' => '0',
-    'patch' => '4',
-    'release_date' => '27.09.2019',
+    'patch' => '5',
+    'release_date' => '10.10.2019',
+    'admin_login' => 'admin',
+    'admin_password' => 'admin',
     'admin_email' => 'admin@admin.com',
+    'default_password' => 'defaultUser123',
 
     /*
     |--------------------------------------------------------------------------
@@ -75,6 +78,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application available languages
+    |--------------------------------------------------------------------------
+    |
+    | The application can be translated into other language. This value contains
+    | available translations and is used to "save" our preferences in session.
+    | Remember that name of language directory (in /resources/lang) has to be same
+    | as here.
+    |
+    */
+    'available_languages' => ['en', 'pl'],
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     |
@@ -84,7 +101,7 @@ return [
     |
     */
 
-    'locale' => 'pl',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

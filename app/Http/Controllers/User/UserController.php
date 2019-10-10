@@ -48,4 +48,9 @@ class UserController extends Controller
 
         return redirect()->to('user/changePassword')->with(['error' => __('auth.user_profile_bad_password')]);
     }
+
+    public function newOrder()
+    {
+        return view('auth.new_order');
+    }
 }

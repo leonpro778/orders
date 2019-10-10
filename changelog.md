@@ -1,6 +1,18 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [0.0.5] - 02.10.2019
+
+### Added
+- security for language change
+- `available languages` in `config/app.php` file
+- `UserTableSeeder.php` get default values from `config/app.php`
+- __edit user__ for administrator
+- default password to reset user password defined in `config/app.php`
+- __new / edit / delete__ departments
+- `orders` and `orders_status` tables
+- `OrderStatusTableSeeder`
+
 ## [0.0.4] - 01.10.2019
 
 This app will be used to manage orders in company so there was a necessity to
@@ -12,7 +24,6 @@ change project name.
 - add __users roles__
 - __new user__ functionality
 - __users list__ - only view
-
 
 ### Changed
 - __My Profile__ view - added __last modified__ and __created__

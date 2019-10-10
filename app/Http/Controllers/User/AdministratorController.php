@@ -6,10 +6,12 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\Department;
 use App\Models\User;
 use App\Models\UserData;
 use App\Models\UserRole;
+use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
 {
@@ -17,7 +19,7 @@ class AdministratorController extends Controller
     {
         $data = [
             'userRole' => UserRole::where('id', '>', 1)->get(),
-            'departments' => Department::all()
+            'departments' => Department::active()
         ];
         return view('administrator.new_user')->with($data);
     }
@@ -44,8 +46,76 @@ class AdministratorController extends Controller
     public function usersList()
     {
         $data = [
-            'users' => User::where('status', '<>', 5)->get()
+            'users' => User::getAllUsers()
         ];
         return view('administrator.users_list')->with($data);
+    }
+
+    public function editUser($user_id)
+    {
+        try {
+            $user = User::where('login', '<>', config('app.admin_login'))
+                ->where('id', $user_id)
+                ->firstorfail();
+
+            $data = [
+                'user' => $user,
+                'userRole' => UserRole::where('id', '>', 1)->get(),
+                'departments' => Department::active()
+            ];
+
+            return view('administrator.edit_user')->with($data);
+
+        } catch (\Exception $e) {
+            return redirect()->to('administrator/UsersList');
+        }
+    }
+
+    public function updateUser(UpdateUserRequest $request, $user_id)
+    {
+        $request->validated();
+
+        try {
+            $user = User::where('login', '<>', config('app.admin_login'))
+                ->where('id', $user_id)
+                ->firstorfail();
+            $userData = UserData::find($user_id);
+            $user->update($request->all());
+            $userData->update($request->all());
+
+            return redirect()->to('administrator/EditUser/'.$user_id)->with(['success' => __('auth.administrator_edit_user_update')]);
+
+        } catch (\Exception $e) {
+            return redirect()->to('administrator/UsersList');
+        }
+    }
+
+    public function departmentsList()
+    {
+        $data = [
+            'departments' => Department::active()
+        ];
+        return view('administrator.departments')->with($data);
+    }
+
+    public function deleteDepartment($department_id)
+    {
+        $department = Department::where('id', $department_id)
+            ->where('id', '>', 0)->firstorfail();
+        $department->update(['status' => 5]);
+        return redirect()->to('administrator/Departments');
+    }
+
+    public function addDepartment(Request $request)
+    {
+        $department = Department::create(['name' => $request->name, 'status' => 1]);
+        return redirect()->to('administrator/Departments');
+    }
+
+    public function updateDepartment(Request $request, $department_id)
+    {
+        $department = Department::find($department_id);
+        $department->update(['name' => $request->name]);
+        return redirect()->to('administrator/Departments')->with(['success' => __('auth.administrator_departments_updated')]);
     }
 }

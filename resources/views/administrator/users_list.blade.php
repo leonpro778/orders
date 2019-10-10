@@ -12,10 +12,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID user</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Surname</th>
-                        <th scope="col">edit</th>
+                        <th scope="col">{{ __('auth.administrator_users_list_col_user_id') }}</th>
+                        <th scope="col">{{ __('auth.administrator_users_list_col_name') }}</th>
+                        <th scope="col">{{ __('auth.administrator_users_list_col_surname') }}</th>
+                        <th scope="col">{{ __('auth.administrator_users_list_col_options') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +27,14 @@
                         <td>
                             <a href="{{ url('administrator/EditUser/'.$user->id) }}" title ="{{ __('auth.administrator_users_list_edit_button') }}" class="">
                                 <i class="fas fa-edit"></i>
+                            </a>
+
+                            <a href="{{ url('administrator/RestorePassword/'.$user->id) }}" title ="{{ __('auth.administrator_users_list_restore_password_button') }}" class="">
+                                <i class="fas fa-unlock-alt"></i>
+                            </a>
+
+                            <a href="{{ url('administrator/DeleteUser/'.$user->id) }}" title ="{{ __('auth.administrator_users_list_delete_user_button') }}" class="">
+                                <i class="fas fa-user-minus"></i>
                             </a>
                         </td>
                     </tr>

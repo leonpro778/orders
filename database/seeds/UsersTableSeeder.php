@@ -13,8 +13,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'login' => 'admin',
-            'password' => bcrypt('admin'),
+            'login' => config('app.admin_login'),
+            'password' => bcrypt(config('app.admin_password')),
             'email' => config('app.admin_email'),
             'role' => 1,
             'created_at' => date("Y-m-d H:i:s"),

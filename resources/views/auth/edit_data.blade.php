@@ -28,7 +28,11 @@
                     <div class="col-8">
                         <select class="form-control text-right" name="department" id="department">
                             @foreach ($departments as $department)
-                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                @if ((old('department') == $department->id) || ($user->userDataGet->department == $department->id))
+                                    <option value="{{ $department->id }}" selected>{{ $department->name }}</option>
+                                @else
+                                    <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

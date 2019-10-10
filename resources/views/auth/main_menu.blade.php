@@ -13,6 +13,28 @@
             </div>
         </li>
 
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <i class="fas fa-tasks"></i> {{ __('main_menu.menu_orders') }}
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url('order/New') }}"><i class="fas fa-plus-square"></i> {{ __('main_menu.menu_orders_new') }}</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-list-alt"></i> {{ __('main_menu.menu_orders_list') }}</a>
+            </div>
+        </li>
+
+        @if (Auth::user()->checkRole('operator'))
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <i class="fas fa-globe"></i> {{ __('main_menu.menu_operator_dictionaries') }}
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#"><i class="fas fa-building"></i> {{ __('main_menu.menu_operator_buildings') }}</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-business-time"></i> {{ __('main_menu.menu_operator_companies') }}</a>
+                </div>
+            </li>
+        @endif
+
         @if (Auth::user()->checkRole('administrator'))
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -21,6 +43,8 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url('administrator/NewUser') }}"><i class="fas fa-user-plus"></i> {{ __('main_menu.menu_administrator_new_user') }}</a>
                     <a class="dropdown-item" href="{{ url('administrator/UsersList') }}"><i class="fas fa-users"></i> {{ __('main_menu.menu_administrator_users_list') }}</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ url('administrator/Departments') }}"><i class="fas fa-location-arrow"></i> {{ __('main_menu.menu_administrator_departments') }}</a>
                 </div>
             </li>
         @endif
