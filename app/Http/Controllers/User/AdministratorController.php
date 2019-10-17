@@ -101,14 +101,14 @@ class AdministratorController extends Controller
     public function deleteDepartment($department_id)
     {
         $department = Department::where('id', $department_id)
-            ->where('id', '>', 0)->firstorfail();
+            ->where('id', '>', 1)->firstorfail();
         $department->update(['status' => 5]);
         return redirect()->to('administrator/Departments');
     }
 
     public function addDepartment(Request $request)
     {
-        $department = Department::create(['name' => $request->name, 'status' => 1]);
+        Department::create(['name' => $request->name, 'status' => 1]);
         return redirect()->to('administrator/Departments');
     }
 

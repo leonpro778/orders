@@ -38,7 +38,20 @@ Route::group(['middleware' => 'auth'], function () {
      *
      * Routes for orders, middleware requirement is `auth`
      */
-    Route::get('order/New', 'User\UserController@newOrder');
+    Route::get('order/New', 'Page\OrderController@newOrder');
+    Route::post('order/Save', 'Page\OrderController@saveOrder');
+});
+
+/**
+ * Authorized
+ *
+ * For user with operator role
+ */
+Route::group(['middleware' => ['auth', 'role:operator']], function () {
+   Route::get('units', 'Page\UnitController@unitsList');
+   Route::post('units/AddUnit', 'Page\UnitController@addUnit');
+   Route::post('units/Update/{id}','Page\UnitController@updateUnit');
+   Route::get('unit/Delete/{id}', 'Page\UnitController@deleteUnit');
 });
 
 /**

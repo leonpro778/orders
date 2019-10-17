@@ -31,6 +31,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#"><i class="fas fa-building"></i> {{ __('main_menu.menu_operator_buildings') }}</a>
                     <a class="dropdown-item" href="#"><i class="fas fa-business-time"></i> {{ __('main_menu.menu_operator_companies') }}</a>
+                    <a class="dropdown-item" href="{{ url('units') }}"><i class="fas fa-tachometer-alt"></i> {{ __('main_menu.menu_operator_units') }}</a>
                 </div>
             </li>
         @endif

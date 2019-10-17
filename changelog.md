@@ -1,11 +1,19 @@
 # Changelog  
 This file includes all changes in our app.
 
-## [0.0.5] - 02.10.2019
+## [0.0.6] - 17.10.2019
+
+### Added
+
+- tables: `buildings, contractors, ordered_items, items_status, units`
+- __new order__ (dynamically fields)
+- __units__ dictionary (add/update/delete)
+
+## [0.0.5] - 10.10.2019
 
 ### Added
 - security for language change
-- `available languages` in `config/app.php` file
+- available languages in `config/app.php` file
 - `UserTableSeeder.php` get default values from `config/app.php`
 - __edit user__ for administrator
 - default password to reset user password defined in `config/app.php`
