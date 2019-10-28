@@ -12,7 +12,7 @@ class ContractorsTableSeeder extends Seeder
     public function run()
     {
         DB::table('contractors')->insert([
-            ['name' => 'none']
+            ['name' => 'none', 'status' => \App\Models\RecordStatus::ACTIVE]
         ]);
     }
 }

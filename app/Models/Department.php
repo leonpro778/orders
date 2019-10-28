@@ -24,6 +24,6 @@ class Department extends Model
 
     public static function active()
     {
-        return self::where('status', 1)->get();
+        return self::where('status', RecordStatus::ACTIVE)->get();
     }
 }

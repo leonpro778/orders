@@ -20,7 +20,7 @@
          */
         'menu_operator_dictionaries' => 'Dictionaries',
         'menu_operator_buildings' => 'Buildings',
-        'menu_operator_companies' => 'Companies',
+        'menu_operator_contractors' => 'Contractors',
         'menu_operator_units' => 'Units',
 
 

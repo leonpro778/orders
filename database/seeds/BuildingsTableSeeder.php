@@ -12,7 +12,7 @@ class BuildingsTableSeeder extends Seeder
     public function run()
     {
         DB::table('buildings')->insert([
-            ['name' => 'none']
+            ['name' => 'none', 'status' => \App\Models\RecordStatus::ACTIVE]
         ]);
     }
 }

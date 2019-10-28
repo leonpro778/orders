@@ -1,10 +1,20 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [0.0.7] - 28.10.2019
+
+### Added
+- `RecordStatus` model
+- `Helper` in `app` path
+- `currency` in `config/app.php` (used in helper functions)
+- `Building` - controller and model
+- `Contractor` - controller and model
+- functions `changeCurrencyToInt` and `displayCurrency` in `Helper`
+
+
 ## [0.0.6] - 17.10.2019
 
 ### Added
-
 - tables: `buildings, contractors, ordered_items, items_status, units`
 - __new order__ (dynamically fields)
 - __units__ dictionary (add/update/delete)

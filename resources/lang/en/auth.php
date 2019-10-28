@@ -113,4 +113,37 @@
         'units_delete_button' => 'Delete unit',
         'units_update_button' => 'Update',
         'units_unit_updated' => 'Unit name has been updated',
+
+
+        /**
+         * Buildings page
+         */
+        'buildings_title' => 'Buildings',
+        'buildings_list' => 'List of buildings',
+        'buildings_new_building' => 'Add new building',
+        'buildings_building_name' => 'Building name',
+        'buildings_building_code' => 'Code',
+        'buildings_new_building_add_button' => 'Add',
+        'buildings_delete_button' => 'Delete building',
+        'buildings_update_button' => 'Update',
+        'buildings_building_updated' => 'Building has been updated',
+
+        /**
+         * Contractors page
+         */
+        'contractors_title' => 'Contractors',
+        'contractors_list' => 'List of contractors',
+        'contractors_new_contractor' => 'Add new contractor',
+        'contractors_contractor_name' => 'Contractor name',
+        'contractors_contractor_address' => 'Address',
+        'contractors_contractor_email' => 'Email',
+        'contractors_contractor_phone' => 'Phone',
+        'contractors_new_contractor_add_button' => 'Add',
+        'contractors_delete_button' => 'Remove contractor',
+        'contractors_contractor_removed' => 'Contractor has been removed',
+        'contractors_edit_button' => 'Edit',
+        'contractors_edit_title' => 'Edit contractor',
+        'contractors_update_button' => 'Update',
+        'contractors_contractor_updated' => 'Contractor has been updated',
+        'contractors_new_contractor_added' => 'New contractor has benn added',
     ];

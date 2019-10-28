@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Page;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\RecordStatus;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 
@@ -13,14 +14,14 @@ class UnitController extends Controller
     public function unitsList()
     {
         $data = [
-            'units' => Unit::all()
+            'units' => Unit::getUnitsList()
         ];
         return view('operator.units')->with($data);
     }
 
     public function addUnit(Request $request)
     {
-        Unit::create(['name' => $request->name, 'status' => Unit::ACTIVE]);
+        Unit::create(['name' => $request->name, 'status' => RecordStatus::ACTIVE]);
         return redirect()->to('units');
     }
 

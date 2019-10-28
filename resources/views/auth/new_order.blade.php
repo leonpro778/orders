@@ -32,7 +32,7 @@
                             <th scope="col">{{ __('auth.orders_new_order_item_name') }}</th>
                             <th scope="col" style="width: 70px;">{{ __('auth.orders_new_order_quantity') }}</th>
                             <th scope="col" style="width: 100px;">{{ __('auth.orders_new_order_unit') }}</th>
-                            <th scope="col" style="width: 110px;">{{ __('auth.orders_new_order_price') }}</th>
+                            <th scope="col" style="width: 110px;">{{ __('auth.orders_new_order_price') }} ({{ config('app.currency') }})</th>
                             <th scope="col">{{ __('auth.orders_new_order_building') }}</th>
                             <th scope="col">{{ __('auth.orders_new_order_contractor') }}</th>
                             <th></th>

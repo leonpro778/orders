@@ -15,12 +15,13 @@ return [
     'name' => 'LS Orders',
     'major' => '0',
     'minor' => '0',
-    'patch' => '6',
-    'release_date' => '17.10.2019',
+    'patch' => '7',
+    'release_date' => '28.10.2019',
     'admin_login' => 'admin',
     'admin_password' => 'admin',
     'admin_email' => 'admin@admin.com',
     'default_password' => 'defaultUser123',
+    'currency' => 'zł',
 
     /*
     |--------------------------------------------------------------------------
@@ -195,7 +196,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\HelperServiceProvider::class,
     ],
 
     /*

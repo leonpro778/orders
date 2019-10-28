@@ -52,6 +52,17 @@ Route::group(['middleware' => ['auth', 'role:operator']], function () {
    Route::post('units/AddUnit', 'Page\UnitController@addUnit');
    Route::post('units/Update/{id}','Page\UnitController@updateUnit');
    Route::get('unit/Delete/{id}', 'Page\UnitController@deleteUnit');
+
+   Route::get('buildings', 'Page\BuildingController@buildingsList');
+   Route::post('buildings/AddBuilding', 'Page\BuildingController@addBuilding');
+   Route::post('buildings/Update/{id}', 'Page\BuildingController@updateBuilding');
+   Route::get('buildings/Delete/{id}', 'Page\BuildingController@deleteBuilding');
+
+   Route::get('contractors', 'Page\ContractorController@contractorsList');
+   Route::post('contractors/AddContractor', 'Page\ContractorController@addContractor');
+   Route::get('contractors/Edit/{id}', 'Page\ContractorController@editContractor');
+   Route::post('contractors/Update/{id}', 'Page\ContractorController@updateContractor');
+   Route::get('contractors/Delete/{id}', 'Page\ContractorController@deleteContractor');
 });
 
 /**

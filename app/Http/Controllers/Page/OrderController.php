@@ -19,9 +19,9 @@ class OrderController extends Controller
     public function newOrder()
     {
         $data = [
-            'buildings' => Building::all(),
-            'contractors' => Contractor::all(),
-            'units' => Unit::all()
+            'buildings' => Building::getBuildingsList(),
+            'contractors' => Contractor::getContractorsList(),
+            'units' => Unit::getUnitsList()
         ];
         return view('auth.new_order')->with($data);
     }

@@ -29,7 +29,7 @@ class Item extends Model
                 'name' => $request->get('itemName')[$key],
                 'quantity' => $request->get('quantity')[$key],
                 'unit' => $request->get('unit')[$key],
-                'price' => $request->get('price')[$key],
+                'price' => changeCurrencyToInt($request->get('price')[$key]),
                 'building' => $request->get('building')[$key],
                 'contractor' => $request->get('contractor')[$key],
                 'status' => 2,

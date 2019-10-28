@@ -12,7 +12,7 @@ class UnitsTableSeeder extends Seeder
     public function run()
     {
         DB::table('units')->insert([
-            ['name' => 'item']
+            ['name' => 'item', 'status' => \App\Models\RecordStatus::ACTIVE]
         ]);
     }
 }
