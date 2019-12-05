@@ -23,7 +23,6 @@ class CreateOrderedItemsTable extends Migration
             $table->integer('building');
             $table->integer('contractor');
             $table->integer('status');
-            $table->timestamps();
         });
     }
 

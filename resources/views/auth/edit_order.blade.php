@@ -9,12 +9,12 @@
 
     <div class="row">
         <div class="col">
-            <form action="{{ url('order/Save') }}" method="POST">
+            <form action="{{ url('order/Update/'.$order->id) }}" method="POST">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-1">
-                        <button type="submit" class="btn btn-sm btn-success" title="{{ __('auth.orders_new_order_save_order') }}">
-                            <i class="fas fa-share"></i> {{ __('auth.orders_new_order_save_order') }}
+                        <button type="submit" class="btn btn-sm btn-success" title="{{ __('auth.orders_update_order') }}">
+                            <i class="fas fa-share"></i> {{ __('auth.orders_update_order') }}
                         </button>
                     </div>
                     <div class="col-2 text-right">{{ __('auth.orders_new_order_order_date') }}</div>
@@ -26,7 +26,11 @@
                     <div class="col-4">
                         <select class="form-control form-control-sm" name="department">
                         @foreach($departments as $department)
-                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @if ($department->id == $order->department)
+                                <option value="{{ $department->id }}" selected>{{ $department->name }}</option>
+                            @else
+                                    <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @endif
                         @endforeach
                         </select>
                     </div>
@@ -47,41 +51,65 @@
                         </tr>
                     </thead>
                     <tbody id="newOrderBody">
-                        <tr>
-                            <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" required /></td>
-                            <td id="quantity"><input type="text" class="form-control form-control-sm" name="quantity[]" required /></td>
+                        @php $numItem = 1; @endphp
+                        @foreach($order->orderedItems as $item)
+                            @if ($numItem > 1)
+                                <tr id="newOrderRow{{ $numItem }}">
+                            @else
+                                <tr>
+                            @endif
+                            <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" required value="{{ $item->name }}"/></td>
+                            <td id="quantity"><input type="text" class="form-control form-control-sm" name="quantity[]" required value="{{ $item->quantity }}"/></td>
                             <td id="units"><select class="form-control form-control-sm" name="unit[]">
                                 @foreach($units as $unit)
+                                    @if ($unit->id == $item->unit)
+                                        <option value="{{$unit->id}}" selected>{{ $unit->name }}</option>
+                                    @else
                                         <option value="{{$unit->id}}">{{ $unit->name }}</option>
+                                    @endif
                                 @endforeach
                                 </select>
                             </td>
                             <td id="price">
-                                <input type="text" class="form-control form-control-sm" name="price[]" required />
+                                <input type="text" class="form-control form-control-sm" name="price[]" value="{{ displayCurrency($item->price) }}" required />
                                 <input type="hidden" name="countItems[]" />
                             </td>
                             <td id="buildings">
                                 <select class="form-control form-control-sm" name="building[]">
                                     @foreach($buildings as $building)
-                                        <option value="{{ $building->id }}">{{ $building->name }}</option>
+                                        @if ($building->id == $item->building)
+                                            <option value="{{ $building->id }}" selected>{{ $building->name }}</option>
+                                        @else
+                                            <option value="{{ $building->id }}">{{ $building->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </td>
                             <td id="contractors">
                                 <select class="form-control form-control-sm" name="contractor[]">
                                     @foreach($contractors as $contractor)
-                                        <option value="{{ $contractor->id }}">{{ $contractor->name }}</option>
+                                        @if ($contractor->id == $item->contractor)
+                                            <option value="{{ $contractor->id }}" selected>{{ $contractor->name }}</option>
+                                        @else
+                                            <option value="{{ $contractor->id }}">{{ $contractor->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </td>
-                            <td></td>
+                            @if ($numItem > 1)
+                            <td><button class="btn btn-danger btn-sm" onclick="removeRow({{ $numItem }})"><i class="fas fa-times"></i></button></td>
+                            @else
+                                <td></td>
+                            @endif
                         </tr>
+                        @php $numItem++; @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </form>
         </div>
     </div>
-    <script>let numRow = 1;</script>
+    <script>let numRow = {{ $numItem }};</script>
     <script src="{{ asset('js/new_order.js') }}"></script>
 @endsection
 

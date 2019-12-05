@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->string('number')->unique();
             $table->integer('status');
+            $table->integer('department');
             $table->date('order_date');
         });
     }

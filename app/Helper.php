@@ -2,7 +2,7 @@
 
 if (!function_exists('displayCurrency')) {
     function displayCurrency(int $amount) {
-        return number_format(($amount/100), 2, ',', ' ').' '.config('app.currency');
+        return number_format(($amount/100), 2, ',', ' ');
     }
 }
 

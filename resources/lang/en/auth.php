@@ -96,11 +96,56 @@
         'orders_new_order_price' => 'Price',
         'orders_new_order_building' => 'Building',
         'orders_new_order_contractor' => 'Contractor',
+        'orders_new_order_department' => 'Department',
+
+        /**
+         * List orders page
+         */
+        'list_orders_title' => 'List orders',
+        'list_orders_order_number' => 'Order number',
+        'list_orders_owner' => 'owner',
+        'list_orders_edit' => 'Edit order',
+        'list_orders_print' => 'Print order',
+        'list_orders_change_status' => 'Change status',
+        'list_orders_sign_order' => 'Sign order',
+        'list_orders_view_order' => 'View order',
+        'list_orders_order_value' => 'order value',
+
+        /**
+         * Search page - on list orders
+         */
+        'search_advanced' => 'Advanced search',
+        'search_from_date' => 'From date',
+        'search_to_date' => 'To date',
+        'search_sort_asc' => 'Ascending',
+        'search_sort_desc' => 'Descending',
+        'search_order_by_date' => 'Order by date',
 
         /**
          * Result order
          */
         'orders_result_title' => 'New order - result',
+
+        /**
+         * Edit order page
+         */
+        'orders_edit_order' => 'Edit order',
+        'orders_update_order' => 'Update order',
+
+        /**
+         * View order page
+         */
+        'order_view_title' => 'View order',
+        'order_view_print_order' => 'Print order',
+        'order_view_print_order_ext' => 'Print order extended',
+        'order_view_order_date' => 'Order date',
+
+        /**
+         * Status order page
+         */
+        'status_order_title' => 'Status order',
+        'status_order_status_item' => 'status',
+        'status_order_update_button' => 'Update ordered items status',
 
         /**
          * Units page

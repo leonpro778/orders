@@ -1,6 +1,20 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [0.0.8] - 05.12.2019
+
+### Added
+- __edit order__
+- department field in order (can be change with edit order)
+- __sign order__
+- __view order__
+- __print order__ (also polish translation file `print_order.php`)
+- extended print (include manager signature)
+- __list orders__ shows only user orders if user is lower than `operator`
+- __list orders__ paginate and `orderBy` order date (DESC)
+- __list orders__ status (each status has own color and icon)
+- __search form__ - with pagination (15 results per page)
+
 ## [0.0.7] - 28.10.2019
 
 ### Added
@@ -10,7 +24,6 @@ This file includes all changes in our app.
 - `Building` - controller and model
 - `Contractor` - controller and model
 - functions `changeCurrencyToInt` and `displayCurrency` in `Helper`
-
 
 ## [0.0.6] - 17.10.2019
 

@@ -19,7 +19,7 @@
             </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ url('order/New') }}"><i class="fas fa-plus-square"></i> {{ __('main_menu.menu_orders_new') }}</a>
-                <a class="dropdown-item" href="#"><i class="fas fa-list-alt"></i> {{ __('main_menu.menu_orders_list') }}</a>
+                <a class="dropdown-item" href="{{ url('order/List') }}"><i class="fas fa-list-alt"></i> {{ __('main_menu.menu_orders_list') }}</a>
             </div>
         </li>
 

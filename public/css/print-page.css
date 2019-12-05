@@ -1,0 +1,118 @@
+body {
+    text-align: left;
+    font-family: Arial;
+    font-size: 12px;
+    color: #000000;
+    margin: 0px auto;
+    padding: 5px;
+}
+
+.print-container {
+    width: 700px;
+    min-height: 1000px;
+    padding: 5px;
+    position: relative;
+}
+
+.text-size-up {
+    font-size: 1.3em;
+}
+
+.text-department-title {
+    display: inline-block;
+    padding: 5px 20px 5px 20px;
+}
+
+.text-department {
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.order-num {
+    float: left;
+}
+
+.order-date {
+    float: right;
+}
+
+.order-title {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.order-action {
+    display: block;
+    padding: 20px 20px 10px 20px;
+}
+
+.order-table-container {
+    display: block;
+    padding: 15px;
+}
+
+.table-order {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    font-size: 11px;
+}
+
+.table-header {
+    background-color: #d3d3d3;
+    font-weight: bold;
+}
+
+.table-header > th {
+    padding: 10px;
+}
+
+.table-order-row-strip > td {
+    padding: 10px 0;
+}
+
+.table-order-row-strip:nth-child(even) {
+    background-color: #e3e3e3;
+}
+
+.table-order-row-strip:last-child {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.number-items {
+    display: inline-block;
+    padding: 30px 10px;
+    font-size: 1.3em;
+}
+
+.value-order {
+    display: inline-block;
+    padding: 30px 20px 10px 60px;
+    font-size: 1.3em;
+}
+
+.signature {
+    display: inline-block;
+    width: 230px;
+    padding: 20px 0;
+    font-size: 1.5em;
+}
+
+.signature-field {
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.footer-order {
+    position: absolute;
+    bottom: 5px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: #a2a2a2;
+    width: 100%;
+}

@@ -40,6 +40,14 @@ Route::group(['middleware' => 'auth'], function () {
      */
     Route::get('order/New', 'Page\OrderController@newOrder');
     Route::post('order/Save', 'Page\OrderController@saveOrder');
+    Route::get('order/List', 'Page\OrderController@showOrders');
+    Route::post('search', 'Page\OrderController@search');
+    Route::get('searchResult', 'Page\OrderController@searchResult');
+    Route::get('order/Edit/{id}', 'Page\OrderController@editOrder');
+    Route::post('order/Update/{id}', 'Page\OrderController@updateOrder');
+    Route::get('order/View/{id}', 'Page\OrderController@viewOrder');
+    Route::get('order/Print/{id}', 'Page\OrderController@printOrder');
+    Route::get('order/Print/{id}/{extended}', 'Page\OrderController@printOrder');
 });
 
 /**
@@ -63,6 +71,11 @@ Route::group(['middleware' => ['auth', 'role:operator']], function () {
    Route::get('contractors/Edit/{id}', 'Page\ContractorController@editContractor');
    Route::post('contractors/Update/{id}', 'Page\ContractorController@updateContractor');
    Route::get('contractors/Delete/{id}', 'Page\ContractorController@deleteContractor');
+
+   Route::get('order/Sign/{id}', 'Page\OrderController@signOrder');
+   Route::get('order/Status/{id}', 'Page\OrderController@statusOrder');
+   Route::post('order/updateStatus/{id}', 'Page\OrderController@updateStatusOrder');
+
 });
 
 /**

@@ -19,3 +19,13 @@ span.red {
 span.green {
     color: green;
 }
+
+.item-hover-row:hover {
+    background-color: #ececec;
+}
+
+.order-date-list {
+    font-size: 0.7em;
+    color: #a2a2a2;
+    font-style: italic;
+}

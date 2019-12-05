@@ -24,4 +24,9 @@ class UserData extends Model
     {
         return $this->hasOne(Department::class, 'id', 'department');
     }
+
+    public function getFullName()
+    {
+        return $this->name.' '.$this->surname;
+    }
 }

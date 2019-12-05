@@ -9,7 +9,7 @@
  * The numRow value is our "counter" which is used to identify rows. To avoid duplication rows this value can
  * only increase
  */
-let numRow = 1;
+// let numRow = 1;
 
 /**
  * This is table element where new fields will be add
