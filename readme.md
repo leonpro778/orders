@@ -8,4 +8,12 @@ We use:
 - [Bootstrap 4](https://getbootstrap.com/)
 - [jQuery](https://jquery.com/)
 
-For now, there is no release version
+Some screenshots from 1.0.0 version
+
+![Screen 1](http://luk-star.pl/git/scr01.jpg)
+
+![Screen 2](http://luk-star.pl/git/scr02.jpg)
+
+![Screen 3](http://luk-star.pl/git/scr03.jpg)
+
+![Screen 4](http://luk-star.pl/git/scr04.jpg)
