@@ -10,7 +10,7 @@
     <hr />
     <div class="row">
         <div class="col">
-            <h4>{{ __('auth.search_advanced') }}</h4>
+            <h4>{{ __('auth.search_title') }}</h4>
         </div>
     </div>
     <div class="row">
@@ -21,8 +21,13 @@
                     <div class="col">{{ __('auth.search_order_by_date') }}</div>
                     <div class="col">
                         <select class="form-control form-control-sm" name="sort_type">
-                            <option value="asc">{{ __('auth.search_sort_asc') }}</option>
-                            <option value="desc">{{ __('auth.search_sort_desc') }}</option>
+                            @if (session()->get('ls-conditions')[0]['sort']['order_date'] == 'desc')
+                                <option value="desc" selected>{{ __('auth.search_sort_desc') }}</option>
+                                <option value="asc">{{ __('auth.search_sort_asc') }}</option>
+                            @else
+                                <option value="desc">{{ __('auth.search_sort_desc') }}</option>
+                                <option value="asc" selected>{{ __('auth.search_sort_asc') }}</option>
+                            @endif
                         </select>
                     </div>
 
@@ -32,7 +37,7 @@
                     <div class="col text-right">{{ __('auth.search_to_date') }}</div>
                     <div class="col"><input type="date" name="toDate" class="form-control form-control-sm" value="{{ session()->get('ls-conditions')[0]['date']['toDate'] }}" /></div>
                 </div>
-                <input type="submit" value="Search" />
+                <input type="submit" class="btn btn-primary" value="{{ __('auth.search_button_title') }}" />
             </form>
         </div>
     </div>

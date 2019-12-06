@@ -71,7 +71,7 @@
                                 </select>
                             </td>
                             <td id="price">
-                                <input type="text" class="form-control form-control-sm" name="price[]" value="{{ displayCurrency($item->price) }}" required />
+                                <input type="text" class="form-control form-control-sm" name="price[]" value="{{ str_replace(' ', '', displayCurrency($item->price)) }}" required />
                                 <input type="hidden" name="countItems[]" />
                             </td>
                             <td id="buildings">

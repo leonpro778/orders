@@ -6,6 +6,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangePasswordRequest;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +15,14 @@ class UserController extends Controller
 {
     public function welcomePage()
     {
-        return view('auth.welcome')->with(['user' => Auth::user()]);
+        $orders = Order::where('user_id', Auth::user()->id)->where('order_date', '>=', (date('Y-m-d', time()-60*60*24*7)))->get();
+        $data = [
+            'user' => Auth::user(),
+            'orders' => $orders,
+            'ordersActive' => $orders->where('status', '<>', Order::CLOSED)->where('status', '<>', Order::DELETED)
+        ];
+
+        return view('auth.welcome')->with($data);
     }
 
     public function myProfile()

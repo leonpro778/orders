@@ -37,7 +37,6 @@
                                                 <option value="{{ $role->id }}">{{ __('users_role.'.$role->name) }}</option>
                                         @endif
                                     @endforeach
-                                        <!-- TODO - add old selection -->
                                     </select>
                                 </div>
                         </div>

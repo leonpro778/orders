@@ -114,17 +114,26 @@
         /**
          * Search page - on list orders
          */
-        'search_advanced' => 'Advanced search',
+        'search_title' => 'Search',
         'search_from_date' => 'From date',
         'search_to_date' => 'To date',
         'search_sort_asc' => 'Ascending',
         'search_sort_desc' => 'Descending',
         'search_order_by_date' => 'Order by date',
+        'search_button_title' => 'Search',
 
         /**
          * Result order
          */
         'orders_result_title' => 'New order - result',
+        'orders_result_success' => 'Your order has been added successfully. Number order',
+        'orders_result_sign_text' => 'Sign order to start realize',
+        'orders_result_sign_button' => 'Sign',
+        'orders_result_edit_text' => 'Edit order to modify',
+        'orders_result_edit_button' => 'Edit',
+        'orders_result_view_text' => 'View order to print',
+        'orders_result_view_button' => 'View',
+        'orders_result_back' => 'Back to orders list',
 
         /**
          * Edit order page

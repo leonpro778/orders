@@ -69,7 +69,8 @@ class Order extends Model
 
         return Order::where($whereConditions)
             ->whereBetween('order_date', $dateRange)
-            ->orderBy('order_date', $sortType);
+            ->orderBy('order_date', $sortType)
+            ->orderBy('id', $sortType);
     }
 
     public function orderedItems()

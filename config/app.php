@@ -13,10 +13,10 @@ return [
     |
     */
     'name' => 'LS Orders',
-    'major' => '0',
+    'major' => '1',
     'minor' => '0',
-    'patch' => '8',
-    'release_date' => '05.12.2019',
+    'patch' => '0',
+    'release_date' => '06.12.2019',
     'admin_login' => 'admin',
     'admin_password' => 'admin',
     'admin_email' => 'admin@admin.com',

@@ -1,6 +1,16 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.0] - 06.12.2019
+
+### Added
+- more information after save order
+- complete translation to polish language
+
+### Fixed
+- __view orders__ now sort orders correctly (including `id` order)
+- order value now display correctly (without space)
+
 ## [0.0.8] - 05.12.2019
 
 ### Added

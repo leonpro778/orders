@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <div class="col">
+        <div class="col- col-md-6">
             <form action="{{ url('user/MyProfile/Update') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group row">
@@ -53,7 +53,7 @@
             </form>
         </div>
 
-        <div class="col">
+        <div class="col- col-md-6">
             @if (session()->has('error'))
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>

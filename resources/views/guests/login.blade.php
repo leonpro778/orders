@@ -1,15 +1,14 @@
 @extends('layout.main_layout')
 
 @section('content')
-    <div class="row">
-        <div class="col-12 text-center">
+    <div class="row justify-content-md-center">
+        <div class="col text-center">
             <h1>{{ config('app.name') }}</h1>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
+    <div class="row justify-content-md-center">
+        <div class="col- col-sm col-md-8 col-lg-4">
             <div class="card">
                 <div class="card-header card-header-fill-blue">
                     {{ __('login_page.login_header') }}
@@ -44,7 +43,6 @@
                 </div>
             @endif
         </div>
-        <div class="col-4"></div>
     </div>
 
 @endsection
