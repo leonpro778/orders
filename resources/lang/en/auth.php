@@ -119,6 +119,10 @@
         'search_to_date' => 'To date',
         'search_sort_asc' => 'Ascending',
         'search_sort_desc' => 'Descending',
+        'search_status_criteria' => 'Show orders with status:',
+        'search_active_status' => 'active',
+        'search_signed_status' => 'signed',
+        'search_closed_status' => 'closed',
         'search_order_by_date' => 'Order by date',
         'search_button_title' => 'Search',
 

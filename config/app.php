@@ -15,8 +15,8 @@ return [
     'name' => 'LS Orders',
     'major' => '1',
     'minor' => '0',
-    'patch' => '0',
-    'release_date' => '06.12.2019',
+    'patch' => '1',
+    'release_date' => '11.12.2019',
     'admin_login' => 'admin',
     'admin_password' => 'admin',
     'admin_email' => 'admin@admin.com',
@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------

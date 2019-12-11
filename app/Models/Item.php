@@ -13,6 +13,7 @@ class Item extends Model
     const ORDERED = 1;
     const NOT_ORDERED = 2;
     const DELIVERED = 3;
+    const DELETED = 10;
 
     protected $table = 'ordered_items';
     public $timestamps = false;

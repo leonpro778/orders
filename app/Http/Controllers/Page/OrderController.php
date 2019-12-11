@@ -55,6 +55,7 @@ class OrderController extends Controller
     {
         SearchHelper::setDateRange($request->fromDate, $request->toDate);
         SearchHelper::setSortType($request->sort_type);
+        SearchHelper::setStatusCriteria($request->statusType);
         return redirect()->to('searchResult');
     }
 

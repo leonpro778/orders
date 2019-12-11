@@ -58,7 +58,7 @@
                             @else
                                 <tr>
                             @endif
-                            <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" required value="{{ $item->name }}"/></td>
+                            <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" maxlength="250" required value="{{ $item->name }}"/></td>
                             <td id="quantity"><input type="text" class="form-control form-control-sm" name="quantity[]" required value="{{ $item->quantity }}"/></td>
                             <td id="units"><select class="form-control form-control-sm" name="unit[]">
                                 @foreach($units as $unit)

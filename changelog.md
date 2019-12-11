@@ -1,6 +1,12 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.1] - 10.12.2019
+
+### Added
+- more search criteria
+- __maxlength__ for input field in new order and edit order
+
 ## [1.0.0] - 06.12.2019
 
 ### Added

@@ -42,6 +42,17 @@ class Order extends Model
         return $count.'/'.$month.'/'.$year;
     }
 
+    public static function getStatusOrderNumber()
+    {
+        return [
+            'temp' => Order::TEMP,
+            'active' => Order::ACTIVE,
+            'signed' => Order::SIGNED,
+            'closed' => Order::CLOSED,
+            'deleted' => Order::DELETED
+        ];
+    }
+
     public function addOrder($request): bool
     {
         try {
@@ -61,13 +72,15 @@ class Order extends Model
     public static function getOrdersList()
     {
         $searchConditions = SearchHelper::getConditions();
-        if (!Auth::user()->checkRole('operator')) { $searchConditions[0]['where'][] = ['user_id', '=', Auth::user()->id]; }
+        if (!Auth::user()->checkRole('operator')) { $searchConditions['where'][] = ['user_id', '=', Auth::user()->id]; }
 
-        $whereConditions = $searchConditions[0]['where'];
-        $dateRange = [$searchConditions[0]['date']['fromDate'], $searchConditions[0]['date']['toDate']];
-        $sortType = $searchConditions[0]['sort']['order_date'];
+        $whereConditions = $searchConditions['where'];
+        $whereInCondition = $searchConditions['wherein'];
+        $dateRange = [$searchConditions['date']['fromDate'], $searchConditions['date']['toDate']];
+        $sortType = $searchConditions['sort'];
 
         return Order::where($whereConditions)
+            ->whereIn('status', $whereInCondition)
             ->whereBetween('order_date', $dateRange)
             ->orderBy('order_date', $sortType)
             ->orderBy('id', $sortType);
@@ -75,7 +88,7 @@ class Order extends Model
 
     public function orderedItems()
     {
-        return $this->hasMany(Item::class, 'order_id', 'id');
+        return $this->hasMany(Item::class, 'order_id', 'id')->where('status', '<>', Item::DELETED);
     }
 
     public function departments()

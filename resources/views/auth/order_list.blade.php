@@ -21,7 +21,7 @@
                     <div class="col">{{ __('auth.search_order_by_date') }}</div>
                     <div class="col">
                         <select class="form-control form-control-sm" name="sort_type">
-                            @if (session()->get('ls-conditions')[0]['sort']['order_date'] == 'desc')
+                            @if (session()->get('ls-conditions')['sort'] == 'desc')
                                 <option value="desc" selected>{{ __('auth.search_sort_desc') }}</option>
                                 <option value="asc">{{ __('auth.search_sort_asc') }}</option>
                             @else
@@ -32,11 +32,30 @@
                     </div>
 
                     <div class="col text-right">{{ __('auth.search_from_date') }}</div>
-                    <div class="col"><input type="date" name="fromDate" class="form-control form-control-sm" value="{{ session()->get('ls-conditions')[0]['date']['fromDate'] }}" /></div>
+                    <div class="col"><input type="date" name="fromDate" class="form-control form-control-sm" value="{{ session()->get('ls-conditions')['date']['fromDate'] }}" /></div>
 
                     <div class="col text-right">{{ __('auth.search_to_date') }}</div>
-                    <div class="col"><input type="date" name="toDate" class="form-control form-control-sm" value="{{ session()->get('ls-conditions')[0]['date']['toDate'] }}" /></div>
+                    <div class="col"><input type="date" name="toDate" class="form-control form-control-sm" value="{{ session()->get('ls-conditions')['date']['toDate'] }}" /></div>
                 </div>
+                <br />
+                <div class="form-row">
+                    <div class="col-2">Show order with status</div>
+                    <div class="col-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="active" name="statusType[]" value="active" {{ session()->get('ls-conditions')['status_order']['active'] }}>
+                            <label class="form-check-label" for="active">{{ __('auth.search_active_status') }}</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="signed" name="statusType[]" value="signed" {{ session()->get('ls-conditions')['status_order']['signed'] }}>
+                            <label class="form-check-label" for="signed">{{ __('auth.search_signed_status') }}</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="closed" name="statusType[]" value="closed" {{ session()->get('ls-conditions')['status_order']['closed'] }}>
+                            <label class="form-check-label" for="closed">{{ __('auth.search_closed_status') }}</label>
+                        </div>
+                    </div>
+                </div>
+                <br />
                 <input type="submit" class="btn btn-primary" value="{{ __('auth.search_button_title') }}" />
             </form>
         </div>

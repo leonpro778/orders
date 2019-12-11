@@ -119,6 +119,10 @@
         'search_to_date' => 'Do daty',
         'search_sort_asc' => 'Rosnąco',
         'search_sort_desc' => 'Malejąco',
+        'search_status_criteria' => 'Pokaż zamówienia ze statusem:',
+        'search_active_status' => 'aktywne',
+        'search_signed_status' => 'podpisane',
+        'search_closed_status' => 'zamknięte',
         'search_order_by_date' => 'Sortuj po dacie',
         'search_button_title' => 'Szukaj',
 

@@ -19,7 +19,7 @@ class CreateUsersDataTable extends Migration
             $table->string('name')->default('none');
             $table->string('surname')->default('none');
             $table->integer('department')->default(1);
-            $table->string('phone', 20)->nullable();
+            $table->string('phone', 50)->nullable();
             $table->string('cellphone', 20)->nullable();
             $table->timestamps();
         });

@@ -48,7 +48,7 @@
                     </thead>
                     <tbody id="newOrderBody">
                         <tr>
-                            <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" required /></td>
+                            <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" maxlength="250" required /></td>
                             <td id="quantity"><input type="text" class="form-control form-control-sm" name="quantity[]" required /></td>
                             <td id="units"><select class="form-control form-control-sm" name="unit[]">
                                 @foreach($units as $unit)
