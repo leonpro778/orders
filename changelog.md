@@ -1,7 +1,21 @@
 # Changelog  
 This file includes all changes in our app.
 
-## [1.0.1] - 10.12.2019
+## [1.0.2] - 12.12.2019
+
+### Added
+- __delete order__
+- confirmation for sign order or delete order
+- type for input field __quantity__ as number
+
+### Fixed
+- generating next order number (bug after delete order)
+- error with generating first order in month
+
+### Removed
+- input field __order date__ in edit order
+
+## [1.0.1] - 11.12.2019
 
 ### Added
 - more search criteria

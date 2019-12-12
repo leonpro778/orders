@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-2 text-right">{{ __('auth.orders_new_order_order_date') }}</div>
                     <div class="col-2">
-                        <input type="date" class="form-control form-control-sm" name="order_date" value="{{ date('Y-m-d')  }}" />
+                        {{ $order->order_date }}
                     </div>
                     <div class="col-1"></div>
                     <div class="col-2 text-right">{{ __('auth.orders_new_order_department') }}</div>
@@ -42,12 +42,12 @@
                     <thead>
                         <tr>
                             <th scope="col">{{ __('auth.orders_new_order_item_name') }}</th>
-                            <th scope="col" style="width: 70px;">{{ __('auth.orders_new_order_quantity') }}</th>
-                            <th scope="col" style="width: 100px;">{{ __('auth.orders_new_order_unit') }}</th>
-                            <th scope="col" style="width: 110px;">{{ __('auth.orders_new_order_price') }} ({{ config('app.currency') }})</th>
-                            <th scope="col">{{ __('auth.orders_new_order_building') }}</th>
-                            <th scope="col">{{ __('auth.orders_new_order_contractor') }}</th>
-                            <th></th>
+                            <th scope="col" style="width: 90px;">{{ __('auth.orders_new_order_quantity') }}</th>
+                            <th scope="col" style="width: 90px;">{{ __('auth.orders_new_order_unit') }}</th>
+                            <th scope="col" style="width: 100px;">{{ __('auth.orders_new_order_price') }} ({{ config('app.currency') }})</th>
+                            <th scope="col" style="width: 200px;">{{ __('auth.orders_new_order_building') }}</th>
+                            <th scope="col" style="width: 150px;">{{ __('auth.orders_new_order_contractor') }}</th>
+                            <th style="width: 55px"></th>
                         </tr>
                     </thead>
                     <tbody id="newOrderBody">
@@ -59,7 +59,7 @@
                                 <tr>
                             @endif
                             <td id="itemName"><input type="text" class="form-control form-control-sm" name="itemName[]" maxlength="250" required value="{{ $item->name }}"/></td>
-                            <td id="quantity"><input type="text" class="form-control form-control-sm" name="quantity[]" required value="{{ $item->quantity }}"/></td>
+                            <td id="quantity"><input type="integer" class="form-control form-control-sm" name="quantity[]" required value="{{ $item->quantity }}"/></td>
                             <td id="units"><select class="form-control form-control-sm" name="unit[]">
                                 @foreach($units as $unit)
                                     @if ($unit->id == $item->unit)

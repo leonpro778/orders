@@ -73,6 +73,7 @@ Route::group(['middleware' => ['auth', 'role:operator']], function () {
    Route::get('contractors/Delete/{id}', 'Page\ContractorController@deleteContractor');
 
    Route::get('order/Sign/{id}', 'Page\OrderController@signOrder');
+   Route::get('order/Delete/{id}', 'Page\OrderController@deleteOrder');
    Route::get('order/Status/{id}', 'Page\OrderController@statusOrder');
    Route::post('order/updateStatus/{id}', 'Page\OrderController@updateStatusOrder');
 

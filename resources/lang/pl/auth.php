@@ -88,7 +88,7 @@
         'orders_new_order_num' => 'Numer',
         'orders_new_order_add_row' => 'Dodaj wiersz',
         'orders_new_order_remove_row' => 'Usuń wiersz',
-        'orders_new_order_save_order' => 'Zapisz zamówienie',
+        'orders_new_order_save_order' => 'Zapisz',
         'orders_new_order_order_date' => 'Data zamówienia',
         'orders_new_order_item_name' => 'Nazwa rzeczy',
         'orders_new_order_quantity' => 'Ilość',
@@ -104,12 +104,15 @@
         'list_orders_title' => 'Lista zamówień',
         'list_orders_order_number' => 'Numer zamówienia',
         'list_orders_owner' => 'zamawiający',
+        'list_orders_delete' => 'Usuń zamówienie',
         'list_orders_edit' => 'Edytuj zamówienie',
         'list_orders_print' => 'Drukuj zamówienie',
         'list_orders_change_status' => 'Zmień status',
         'list_orders_sign_order' => 'Podpisz zamówienie',
         'list_orders_view_order' => 'Przeglądaj zamówienie',
         'list_orders_order_value' => 'wartość zamówienia',
+        'list_order_confirm_sign' => 'Czy jesteś pewny/a, że chcesz podpisać zamówienie?',
+        'list_order_confirm_delete' => 'Czy jesteś pewny/a, że chcesz usunąć zamówienie?',
 
         /**
          * Search page - on list orders

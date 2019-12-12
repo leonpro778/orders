@@ -87,6 +87,12 @@ class OrderController extends Controller
         return redirect()->to('order/List');
     }
 
+    public function deleteOrder($order_id)
+    {
+        Order::deleteOrder($order_id);
+        return  redirect()->to('order/List');
+    }
+
     public function editOrder($id)
     {
         $order = Order::findorfail($id);

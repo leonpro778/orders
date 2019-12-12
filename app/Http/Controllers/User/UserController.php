@@ -18,7 +18,7 @@ class UserController extends Controller
         $orders = Order::where('user_id', Auth::user()->id)->where('order_date', '>=', (date('Y-m-d', time()-60*60*24*7)))->get();
         $data = [
             'user' => Auth::user(),
-            'orders' => $orders,
+            'orders' => $orders->where('status', '<>', Order::DELETED),
             'ordersActive' => $orders->where('status', '<>', Order::CLOSED)->where('status', '<>', Order::DELETED)
         ];
 

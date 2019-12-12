@@ -77,14 +77,15 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-10">
                                 {{ __('auth.list_orders_order_number') }}: <strong>{{ $order->number }}</strong> |
                                 {{ __('auth.list_orders_owner') }}: <strong>{{ $order->owner->userDataGet->getFullName() }}</strong> |
                                 {{ __('auth.list_orders_order_value') }}: <strong>{{ displayCurrency($order->orderValue()) }} {{ config('app.currency') }}</strong>
                             </div>
-                            <div class="col-4 text-right">
+                            <div class="col-2 text-right">
                                 @if (Auth::user()->checkRole('operator') && ($order->status == $order::ACTIVE))
-                                    <a href="{{ url('order/Sign/'.$order->id) }}" title="{{ __('auth.list_orders_sign_order') }}"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ url('order/Sign/'.$order->id) }}" title="{{ __('auth.list_orders_sign_order') }}" onclick="return confirm('{{ __('auth.list_order_confirm_sign')  }}')"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ url('order/Delete/'.$order->id) }}" title="{{ __('auth.list_orders_delete') }}" onclick="return confirm('{{ __('auth.list_order_confirm_delete')  }}')"><i class="fas fa-trash-alt"></i></a>
                                 @endif
 
                                 @if ($order->status == $order::ACTIVE)

@@ -35,10 +35,17 @@ class Order extends Model
         $orderDate = new DateTime($orderDate);
         $fromDate = $orderDate->modify('first day of this month')->format('Y-m-d');
         $toDate = $orderDate->modify('last day of this month')->format('Y-m-d');
-        $count = Order::whereBetween('order_date', [$fromDate, $toDate])->count()+1;
+        $lastOrder = Order::whereBetween('order_date', [$fromDate, $toDate])->orderBy('id', 'desc')->first();
+        if ($lastOrder) {
+            $number = explode('/', $lastOrder->number);
+            $count = $number[0]+1;
+        }
+        else {
+            $count = 1;
+        }
+
         $month = $orderDate->format('m');
         $year = $orderDate->format('Y');
-
         return $count.'/'.$month.'/'.$year;
     }
 
@@ -53,7 +60,7 @@ class Order extends Model
         ];
     }
 
-    public function addOrder($request): bool
+    public function addOrder($request)
     {
         try {
             $this->user_id = Auth::user()->id;
@@ -114,5 +121,10 @@ class Order extends Model
     public static function signOrder($order_id)
     {
         self::findorfail($order_id)->update(['status' => self::SIGNED]);
+    }
+
+    public static function deleteOrder($order_id)
+    {
+        self::findorfail($order_id)->update(['status' => self::DELETED]);
     }
 }

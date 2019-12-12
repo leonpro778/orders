@@ -104,12 +104,15 @@
         'list_orders_title' => 'List orders',
         'list_orders_order_number' => 'Order number',
         'list_orders_owner' => 'owner',
+        'list_orders_delete' => 'Delete order',
         'list_orders_edit' => 'Edit order',
         'list_orders_print' => 'Print order',
         'list_orders_change_status' => 'Change status',
         'list_orders_sign_order' => 'Sign order',
         'list_orders_view_order' => 'View order',
         'list_orders_order_value' => 'order value',
+        'list_order_confirm_sign' => 'Are you sure you want to sign this order?',
+        'list_order_confirm_delete' => 'Are you sure you want to delete this order?',
 
         /**
          * Search page - on list orders
