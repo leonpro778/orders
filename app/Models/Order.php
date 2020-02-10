@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class Order extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['user_id', 'number', 'status'];
+    protected $fillable = ['user_id', 'number', 'status', 'department'];
     public $timestamps = false;
 
     const TEMP = 1;

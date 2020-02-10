@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('order/Edit/{id}', 'Page\OrderController@editOrder');
     Route::post('order/Update/{id}', 'Page\OrderController@updateOrder');
     Route::get('order/View/{id}', 'Page\OrderController@viewOrder');
+    Route::get('order/Export/{id}', 'Page\OrderController@exportOrder');
     Route::get('order/Print/{id}', 'Page\OrderController@printOrder');
     Route::get('order/Print/{id}/{extended}', 'Page\OrderController@printOrder');
 });
@@ -91,6 +92,7 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function () {
    Route::get('administrator/UsersList', 'User\AdministratorController@usersList');
    Route::get('administrator/EditUser/{user_id}', 'User\AdministratorController@editUser');
    Route::post('administrator/UpdateUser/{user_id}', 'User\AdministratorController@updateUser');
+   Route::get('administrator/RestorePassword/{user_id}', 'User\AdministratorController@restorePassword');
 
    Route::get('administrator/Departments', 'User\AdministratorController@departmentsList');
    Route::post('administrator/AddDepartment', 'User\AdministratorController@addDepartment');

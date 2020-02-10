@@ -21,7 +21,6 @@ let quantity = document.getElementById("quantity").innerHTML;
 let units = document.getElementById("units").innerHTML;
 let price = document.getElementById("price").innerHTML;
 let buildings = document.getElementById("buildings").innerHTML;
-let contractors = document.getElementById("contractors").innerHTML;
 
 
 /**
@@ -37,7 +36,6 @@ function addRow()
     html += '<td>' + units + '</td>';
     html += '<td>' + price + '</td>';
     html += '<td>' + buildings + '</td>';
-    html += '<td>' + contractors + '</td>';
     html += '<td><button class="btn btn-danger btn-sm" onclick="removeRow(' + numRow + ')"><i class="fas fa-times"></i></button></td>';
     html += '</tr>';
     table.insertAdjacentHTML('beforeend', html);

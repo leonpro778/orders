@@ -90,6 +90,20 @@ class AdministratorController extends Controller
         }
     }
 
+    public function restorePassword($userId)
+    {
+        try {
+            $user = User::where('login', '<>', config('app.admin_login'))
+                ->where('id', $userId)
+                ->firstorfail();
+            $user->password = bcrypt(config('app.default_password'));
+            $user->save();
+            return redirect()->to('administrator/EditUser/'.$userId)->with(['success' => __('auth.administrator_restore_password')]);
+        } catch (\Exception $e) {
+            return redirect()->to('administrator/UserList');
+        }
+    }
+
     public function departmentsList()
     {
         $data = [

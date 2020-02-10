@@ -40,7 +40,6 @@
                         <th scope="col" style="width: 70px;">{{ __('auth.orders_new_order_quantity') }}</th>
                         <th scope="col" style="width: 110px;">{{ __('auth.orders_new_order_price') }}</th>
                         <th scope="col">{{ __('auth.orders_new_order_building') }}</th>
-                        <th scope="col">{{ __('auth.orders_new_order_contractor') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +49,6 @@
                         <td style="text-align: center;">{{ $item->quantity }} {{ $item->units->name }}</td>
                         <td>{{ displayCurrency($item->price) }} {{ config('app.currency') }}</td>
                         <td>{{ $item->buildings->name }}</td>
-                        <td>{{ $item->contractors->name }}</td>
                     </tr>
                 @endforeach
                 </tbody>

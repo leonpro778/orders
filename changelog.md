@@ -1,6 +1,18 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.3] - 10.02.2020
+
+### Added
+- __restore password__ only available for administrator
+- __new status__ for __item__ - partially delivered
+
+### Removed
+- __column contractor__ in new/edit/view order (set default contractor to none)
+
+### Fixed
+- __update order__ - department now will change correctly
+
 ## [1.0.2] - 12.12.2019
 
 ### Added

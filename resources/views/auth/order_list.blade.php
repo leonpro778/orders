@@ -94,6 +94,7 @@
                                     <a href="{{ url('order/Status/'.$order->id) }}" title="{{ __('auth.list_orders_change_status') }}"><i class="fas fa-exchange-alt"></i></a>
                                 @endif
                                 <a href="{{ url('order/View/'.$order->id) }}" title="{{ __('auth.list_orders_view_order') }}"><i class="far fa-eye"></i></a>
+                                <a href="{{ url('order/Export/'.$order->id) }}" title="Export view" target="_blank"><i class="fas fa-file-export"></i></a>
                             </div>
                         </div>
                     </div>

@@ -80,6 +80,7 @@
         'administrator_departments_update' => 'Update department',
         'administrator_departments_updated' => 'Department name has been updated',
         'administrator_departments_delete' => 'Delete department',
+        'administrator_restore_password' => 'Default password has been set',
 
         /**
          * New order page

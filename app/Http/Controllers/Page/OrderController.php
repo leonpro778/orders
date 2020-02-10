@@ -44,6 +44,7 @@ class OrderController extends Controller
         $order = Order::findorfail($order_id);
         Item::removeOldOrderedItems($order_id);
         Item::addItemsToOrder($request, $order_id);
+        $order->update(['department' => $request->department]);
 
         $data = [
             'order' => $order
@@ -137,5 +138,13 @@ class OrderController extends Controller
         $order = Order::findorfail($order_id);
         Item::updateItemsStatus($request->get('item'));
         return redirect()->to('order/Status/'.$order->id);
+    }
+
+    public function exportOrder($order_id)
+    {
+        $data = [
+            'order' => Order::findorfail($order_id)
+        ];
+        return view('auth.order_export')->with($data);
     }
 }

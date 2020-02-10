@@ -13,6 +13,7 @@ class Item extends Model
     const ORDERED = 1;
     const NOT_ORDERED = 2;
     const DELIVERED = 3;
+    const PARTIALLY_DELIVERED = 4;
     const DELETED = 10;
 
     protected $table = 'ordered_items';
@@ -55,7 +56,7 @@ class Item extends Model
                 'unit' => $request->get('unit')[$key],
                 'price' => changeCurrencyToInt($request->get('price')[$key]),
                 'building' => $request->get('building')[$key],
-                'contractor' => $request->get('contractor')[$key],
+                'contractor' => 0,
                 'status' => self::NOT_ORDERED,
             ];
         }
@@ -96,6 +97,12 @@ class Item extends Model
                 $statusIcon = 'fas fa-check-circle';
                 break;
 
+            case self::PARTIALLY_DELIVERED:
+                $statusText = __('item_status.partailly_delivered');
+                $statusColor = '#0000ff';
+                $statusIcon = 'fas fa-truck-loading';
+                break;
+
             default:
                 $statusText = __('item_status.unknown');
                 $statusColor = '#000000';
@@ -114,13 +121,14 @@ class Item extends Model
         return [
             self::ORDERED => 'ordered',
             self::NOT_ORDERED => 'not_ordered',
-            self::DELIVERED => 'delivered'
+            self::DELIVERED => 'delivered',
+            self::PARTIALLY_DELIVERED => 'partially_delivered',
         ];
     }
 
     public static function getStatusArray()
     {
-        return [self::ORDERED, self::NOT_ORDERED, self::DELIVERED];
+        return [self::ORDERED, self::NOT_ORDERED, self::DELIVERED, self::PARTIALLY_DELIVERED];
     }
 
     public static function updateItemsStatus($items)

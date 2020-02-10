@@ -42,7 +42,6 @@
                             <th scope="col" style="width: 90px;">{{ __('auth.orders_new_order_unit') }}</th>
                             <th scope="col" style="width: 100px;">{{ __('auth.orders_new_order_price') }} ({{ config('app.currency') }})</th>
                             <th scope="col" style="width: 200px;">{{ __('auth.orders_new_order_building') }}</th>
-                            <th scope="col" style="width: 150px;">{{ __('auth.orders_new_order_contractor') }}</th>
                             <th style="width: 55px"></th>
                         </tr>
                     </thead>
@@ -64,13 +63,6 @@
                                 <select class="form-control form-control-sm" name="building[]">
                                     @foreach($buildings as $building)
                                         <option value="{{ $building->id }}">{{ $building->name }}</option>
-                                    @endforeach
-                                </select>
-                            </td>
-                            <td id="contractors">
-                                <select class="form-control form-control-sm" name="contractor[]">
-                                    @foreach($contractors as $contractor)
-                                        <option value="{{ $contractor->id }}">{{ $contractor->name }}</option>
                                     @endforeach
                                 </select>
                             </td>

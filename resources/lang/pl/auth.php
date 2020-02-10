@@ -80,6 +80,7 @@
         'administrator_departments_update' => 'Zaktualizuj dział',
         'administrator_departments_updated' => 'Dział został zaktualizowany',
         'administrator_departments_delete' => 'Usuń dział',
+        'administrator_restore_password' => 'Domyślne hasło zostało ustawione',
 
         /**
          * New order page

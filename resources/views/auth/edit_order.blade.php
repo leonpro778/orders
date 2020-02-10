@@ -46,7 +46,6 @@
                             <th scope="col" style="width: 90px;">{{ __('auth.orders_new_order_unit') }}</th>
                             <th scope="col" style="width: 100px;">{{ __('auth.orders_new_order_price') }} ({{ config('app.currency') }})</th>
                             <th scope="col" style="width: 200px;">{{ __('auth.orders_new_order_building') }}</th>
-                            <th scope="col" style="width: 150px;">{{ __('auth.orders_new_order_contractor') }}</th>
                             <th style="width: 55px"></th>
                         </tr>
                     </thead>
@@ -85,17 +84,7 @@
                                     @endforeach
                                 </select>
                             </td>
-                            <td id="contractors">
-                                <select class="form-control form-control-sm" name="contractor[]">
-                                    @foreach($contractors as $contractor)
-                                        @if ($contractor->id == $item->contractor)
-                                            <option value="{{ $contractor->id }}" selected>{{ $contractor->name }}</option>
-                                        @else
-                                            <option value="{{ $contractor->id }}">{{ $contractor->name }}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                            </td>
+
                             @if ($numItem > 1)
                             <td><button class="btn btn-danger btn-sm" onclick="removeRow({{ $numItem }})"><i class="fas fa-times"></i></button></td>
                             @else

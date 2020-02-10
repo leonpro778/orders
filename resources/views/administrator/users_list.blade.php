@@ -29,10 +29,6 @@
                                 <i class="fas fa-edit"></i>
                             </a>
 
-                            <a href="{{ url('administrator/RestorePassword/'.$user->id) }}" title ="{{ __('auth.administrator_users_list_restore_password_button') }}" class="">
-                                <i class="fas fa-unlock-alt"></i>
-                            </a>
-
                             <a href="{{ url('administrator/DeleteUser/'.$user->id) }}" title ="{{ __('auth.administrator_users_list_delete_user_button') }}" class="">
                                 <i class="fas fa-user-minus"></i>
                             </a>

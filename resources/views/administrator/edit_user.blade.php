@@ -73,7 +73,10 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i> {{ __('auth.administrator_edit_user_update_button') }}</button>
-                    </form>
+                    </form><br />
+                    <a href="{{ url('administrator/RestorePassword/'.$user->id) }}" class="btn btn-primary" title ="{{ __('auth.administrator_users_list_restore_password_button') }}" class="">
+                        <i class="fas fa-unlock-alt"></i> {{ __('auth.administrator_users_list_restore_password_button') }}
+                    </a>
                 </div>
             </div>
         </div>
