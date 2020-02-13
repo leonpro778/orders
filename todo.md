@@ -1,9 +1,13 @@
 Do zmiany:
 - [x] nie aktualizuje się dział przy edycji
 - [x] edycja użytkowników (zmienia hasło na domyślne)
-- [ ] czcionka (stary Chrome) ???
-- [ ] Zablokowanie edycji i podpis dla normalnego użytkownika
+- [x] Zablokowanie edycji i podpis dla normalnego użytkownika
 - [x] wyrzucić kolumna firmę
-- [ ] dodać notatki
+- [x] dodać notatki
 - [x] nowy status "częściowo zrealizowane"
+- [x] błąd przy dodawaniu nowego użytkownika
+
+---
+Opcjonalnie:
+- [ ] czcionka (stary Chrome) - opcja
 

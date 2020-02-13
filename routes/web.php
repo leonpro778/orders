@@ -43,8 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('order/List', 'Page\OrderController@showOrders');
     Route::post('search', 'Page\OrderController@search');
     Route::get('searchResult', 'Page\OrderController@searchResult');
-    Route::get('order/Edit/{id}', 'Page\OrderController@editOrder');
-    Route::post('order/Update/{id}', 'Page\OrderController@updateOrder');
     Route::get('order/View/{id}', 'Page\OrderController@viewOrder');
     Route::get('order/Export/{id}', 'Page\OrderController@exportOrder');
     Route::get('order/Print/{id}', 'Page\OrderController@printOrder');
@@ -74,10 +72,17 @@ Route::group(['middleware' => ['auth', 'role:operator']], function () {
    Route::get('contractors/Delete/{id}', 'Page\ContractorController@deleteContractor');
 
    Route::get('order/Sign/{id}', 'Page\OrderController@signOrder');
+   Route::get('order/Edit/{id}', 'Page\OrderController@editOrder');
+   Route::post('order/Update/{id}', 'Page\OrderController@updateOrder');
    Route::get('order/Delete/{id}', 'Page\OrderController@deleteOrder');
    Route::get('order/Status/{id}', 'Page\OrderController@statusOrder');
    Route::post('order/updateStatus/{id}', 'Page\OrderController@updateStatusOrder');
 
+   /**
+    * Notes
+    */
+   Route::get('notes/{order_id}/getAll', 'Page\NoteController@getNotes');
+   Route::post('notes/{order_id}/addNote', 'Page\NoteController@addNote');
 });
 
 /**

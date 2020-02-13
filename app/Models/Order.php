@@ -127,4 +127,9 @@ class Order extends Model
     {
         self::findorfail($order_id)->update(['status' => self::DELETED]);
     }
+
+    public function getNotes()
+    {
+        return $this->hasMany(Notes::class, 'order_id', 'id');
+    }
 }

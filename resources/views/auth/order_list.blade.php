@@ -88,7 +88,13 @@
                                     <a href="{{ url('order/Delete/'.$order->id) }}" title="{{ __('auth.list_orders_delete') }}" onclick="return confirm('{{ __('auth.list_order_confirm_delete')  }}')"><i class="fas fa-trash-alt"></i></a>
                                 @endif
 
-                                @if ($order->status == $order::ACTIVE)
+                                @if (count($order->getNotes) > 0 )
+                                    <a href="#" onclick="openNoteWindow({{ $order->id }})" title="{{ __('note_window.list_orders_notes') }}" style="color: #ff0000;"><i class="far fa-sticky-note"></i></a>
+                                @else
+                                    <a href="#" onclick="openNoteWindow({{ $order->id }})" title="{{ __('note_window.list_orders_notes') }}"><i class="far fa-sticky-note"></i></a>
+                                @endif
+
+                                @if (($order->status == $order::ACTIVE) && (Auth::user()->checkRole('operator')))
                                     <a href="{{ url('order/Edit/'.$order->id) }}" title="{{ __('auth.list_orders_edit') }}"><i class="fas fa-edit"></i></a>
                                 @elseif (($order->status == $order::SIGNED) && (Auth::user()->checkRole('operator')))
                                     <a href="{{ url('order/Status/'.$order->id) }}" title="{{ __('auth.list_orders_change_status') }}"><i class="fas fa-exchange-alt"></i></a>
@@ -126,5 +132,9 @@
             </div>
         </div>
     </div>
+
+    @include('layout.note_window')
+
+    <script src="{{ asset('js/notes.js') }}"></script>
 @endsection
 

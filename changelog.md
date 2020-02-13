@@ -1,6 +1,14 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.4] - 13.02.2020
+
+### Added
+- __note__ for order (short messages)
+
+### Fixed
+- `General SQL error` when adding a new user
+
 ## [1.0.3] - 10.02.2020
 
 ### Added
