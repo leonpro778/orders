@@ -31,6 +31,7 @@
         'menu_administrator_new_user' => 'Nowy użytkownik',
         'menu_administrator_users_list' => 'Lista użytkowników',
         'menu_administrator_departments' => 'Działy',
+        'menu_administrator_smsapi' => 'SmsApi - konfiguracja',
 
         /**
          * About application

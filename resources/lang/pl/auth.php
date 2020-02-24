@@ -114,6 +114,7 @@
         'list_orders_order_value' => 'wartość zamówienia',
         'list_order_confirm_sign' => 'Czy jesteś pewny/a, że chcesz podpisać zamówienie?',
         'list_order_confirm_delete' => 'Czy jesteś pewny/a, że chcesz usunąć zamówienie?',
+        'list_order_send_sms' => 'Wyślij zamówienie na swój telefon',
 
         /**
          * Search page - on list orders

@@ -98,7 +98,7 @@ class Item extends Model
                 break;
 
             case self::PARTIALLY_DELIVERED:
-                $statusText = __('item_status.partailly_delivered');
+                $statusText = __('item_status.partially_delivered');
                 $statusColor = '#0000ff';
                 $statusIcon = 'fas fa-truck-loading';
                 break;
@@ -138,5 +138,13 @@ class Item extends Model
             $item = self::find($key);
             $item->update(['status' => $value]);
         }
+    }
+
+    public static function getSmsOrderList($idOrder)
+    {
+        return Item::select('name', 'quantity')
+            ->where('order_id', $idOrder)
+            ->get()
+            ->toArray();
     }
 }

@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <div class="col- col-md-4">
+        <div class="col col-md-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('auth.quick_actions') }}</h5>
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="col- col-md-4">
+        <div class="col col-md-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('auth.my_orders') }}</h5>
@@ -34,6 +34,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="col col-md-4"></div>
     </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Chart title
+                </div>
+
+                <div class="card-body">
+                    <div id="googleChartDiv"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="{{ asset('js/charts.js') }}"></script>
 @endsection
 

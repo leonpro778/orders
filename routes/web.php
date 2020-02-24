@@ -83,6 +83,16 @@ Route::group(['middleware' => ['auth', 'role:operator']], function () {
     */
    Route::get('notes/{order_id}/getAll', 'Page\NoteController@getNotes');
    Route::post('notes/{order_id}/addNote', 'Page\NoteController@addNote');
+
+   /**
+    * SMS
+    */
+   Route::post('sms/send', 'User\SmsController@sendSms');
+
+   /**
+    * Charts
+    */
+   Route::get('charts/lastMonths', 'Page\ChartController@lastMonths');
 });
 
 /**
@@ -103,7 +113,9 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function () {
    Route::post('administrator/AddDepartment', 'User\AdministratorController@addDepartment');
    Route::post('administrator/Departments/Update/{id}', 'User\AdministratorController@updateDepartment');
    Route::get('administrator/Departments/Delete/{id}', 'User\AdministratorController@deleteDepartment');
+
 });
+
 
 /**
  * Simply route to change language. For now selected language is stored in session.

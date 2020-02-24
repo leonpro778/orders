@@ -114,6 +114,7 @@
         'list_orders_order_value' => 'order value',
         'list_order_confirm_sign' => 'Are you sure you want to sign this order?',
         'list_order_confirm_delete' => 'Are you sure you want to delete this order?',
+        'list_order_send_sms' => 'Send order to your phone',
 
         /**
          * Search page - on list orders

@@ -15,8 +15,8 @@ return [
     'name' => 'LS Orders',
     'major' => '1',
     'minor' => '0',
-    'patch' => '4',
-    'release_date' => '13.02.2020',
+    'patch' => '5',
+    'release_date' => '24.02.2020',
     'admin_login' => 'admin',
     'admin_password' => 'admin',
     'admin_email' => 'admin@admin.com',
@@ -197,6 +197,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+
     ],
 
     /*

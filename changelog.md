@@ -1,6 +1,12 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.5] - 24.02.2020
+
+### Added
+- __chart__ on welcome screen, chart is generate from [Google Charts](https://developers.google.com/chart)
+- __send order list on mobile phone__ using [SMS API](https://smsapi.pl)
+
 ## [1.0.4] - 13.02.2020
 
 ### Added

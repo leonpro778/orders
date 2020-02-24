@@ -83,6 +83,10 @@
                                 {{ __('auth.list_orders_order_value') }}: <strong>{{ displayCurrency($order->orderValue()) }} {{ config('app.currency') }}</strong>
                             </div>
                             <div class="col-2 text-right">
+                                @if (Auth::user()->checkRole('operator'))
+                                    <a href="#" title="{{ __('auth.list_order_send_sms') }}" onclick="sendSms({{ $order->id }})"><i class="fas fa-mobile-alt"></i></a>
+                                @endif
+
                                 @if (Auth::user()->checkRole('operator') && ($order->status == $order::ACTIVE))
                                     <a href="{{ url('order/Sign/'.$order->id) }}" title="{{ __('auth.list_orders_sign_order') }}" onclick="return confirm('{{ __('auth.list_order_confirm_sign')  }}')"><i class="fas fa-pencil-alt"></i></a>
                                     <a href="{{ url('order/Delete/'.$order->id) }}" title="{{ __('auth.list_orders_delete') }}" onclick="return confirm('{{ __('auth.list_order_confirm_delete')  }}')"><i class="fas fa-trash-alt"></i></a>
@@ -136,5 +140,6 @@
     @include('layout.note_window')
 
     <script src="{{ asset('js/notes.js') }}"></script>
+    <script src="{{ asset('js/send_sms.js') }}"></script>
 @endsection
 
