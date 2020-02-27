@@ -1,6 +1,11 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.6] - 27.02.2020
+
+### Added
+- simple API (more info soon, for now login action, check status and get orderslist)
+
 ## [1.0.5] - 24.02.2020
 
 ### Added
