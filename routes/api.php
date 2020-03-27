@@ -13,11 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::group(['middleware' => ['cors']], function () {
+	Route::group(['middleware' => ['authApi']], function () {
+		Route::get('orders/{fromDate}/{toDate}', 'Auth\APIController@getOrders');
+	});
 
-Route::group(['middleware' => ['authApi']], function () {
-    Route::get('orders/last', 'Auth\APIController@getOrdersLast');
+	Route::post('logout', 'Auth\APIController@logout');
+	Route::post('login', 'Auth\APIController@login');
+	Route::post('checkStatus', 'Auth\APIController@checkStatus');
 });
-
-
-Route::post('login', 'Auth\APICOntroller@login');
-Route::post('checkStatus', 'Auth\APIController@checkStatus');

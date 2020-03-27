@@ -11,10 +11,9 @@ class AuthAPI
 {
     public function handle($request, Closure $next)
     {
-        if (Tokens::checkToken($request->token)) {
+        if (Tokens::checkToken($request->bearerToken())) {
             return $next($request);
         }
-
         return response()->json([
             'status' => false
         ]);

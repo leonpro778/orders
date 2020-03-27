@@ -14,11 +14,8 @@ class APIController extends Controller
 {
     public function login(Request $request)
     {
-        $credentials = [
-            'login' => $request->login,
-            'password' => $request->password
-        ];
-        
+        $credentials = $request->json()->all();
+
         $status = false;
         $token = '';
 
@@ -31,15 +28,14 @@ class APIController extends Controller
         return response()->json([
             'status' => $status,
             'token' => $token
-        ], 200, [
-            'Access-Control-Allow-Origin' => '*'
         ]);
     }
 
     public function checkStatus(Request $request)
     {
         $status = false;
-        if (Tokens::checkToken($request->token)) {
+
+        if (Tokens::checkToken($request->json()->get('token'))) {
             $status = true;
         }
 
@@ -48,8 +44,44 @@ class APIController extends Controller
         ]);
     }
 
-    public function getOrdersLast(Request $request)
+    public function getOrders($fromDate, $toDate)
     {
-        return Order::orderBy('order_date', 'desc')->take(5)->get()->toJson();
+        $response = [
+            'status' => true,
+            'orders' => []
+        ];
+
+        /*
+        Template for orders array
+
+        orders => [
+            'name' => $order->number
+        ]
+        */
+        $orders = Order::whereBetween('order_date', [$fromDate, $toDate])->orderBy('order_date', 'desc')->get();
+        
+        foreach ($orders as $order) {
+            
+            foreach ($order->orderedItems as $orderedItem) {
+                $items[] = [
+                    'name' => $orderedItem->name,
+                    'quantity' => $orderedItem->quantity,
+                    'unit' => $orderedItem->units->name
+                ];
+            }
+
+            $response['orders'][] = ['num' => $order->number, 'items' => $items];
+        }
+
+        if (count($response['orders']) == 0) { $response['status'] = false; }
+        return response()->json($response);
+    }
+
+    public function logout(Request $request)
+    {
+        Tokens::deleteToken($request->json()->get('token'));
+        return response()->json([
+            'status' => true
+        ]);
     }
 }

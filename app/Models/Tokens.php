@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use TheSeer\Tokenizer\Token;
 
 class Tokens extends Model
 {
@@ -18,7 +19,7 @@ class Tokens extends Model
         Tokens::create([
             'user_id' => $userId,
             'token' => $token,
-            'expire' => date('Y-m-d H:i', (time() + 60 + 60 + 24))
+            'expire' => date('Y-m-d H:i', (time() + 60 * 60 * 24))
         ]);
     }
 
@@ -34,5 +35,10 @@ class Tokens extends Model
             ->get()->count();
         if ($checkToken > 0) { return true; }
         else { return false; }
+    }
+
+    public static function deleteToken($token)
+    {
+        Tokens::where('token', $token)->delete();
     }
 }
