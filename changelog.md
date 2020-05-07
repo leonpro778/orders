@@ -1,6 +1,11 @@
 # Changelog  
 This file includes all changes in our app.
 
+## [1.0.7] - 07.05.2020
+
+### Fixed
+- error with login action (500 internal server error)
+
 ## [1.0.6] - 27.02.2020
 
 ### Added

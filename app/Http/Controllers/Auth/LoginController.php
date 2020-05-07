@@ -48,7 +48,8 @@ class LoginController extends Controller
         }
         else
         {
-            $returnStatus = User::where('login', $request->login)->first()->status;
+            $returnStatus = User::where('login', $request->login)->first()->status ?? 0;
+
             switch ($returnStatus) {
                 case User::BLOCKED:
                     $returnMessage = __('login_page.account_blocked');
